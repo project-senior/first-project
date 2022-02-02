@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  devtool: 'inline-cheap-module-source-map',
   entry: path.join(__dirname, "client", "src", "index.jsx"),
   output: {
     filename: "bundle.js",
