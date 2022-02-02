@@ -5,7 +5,7 @@ CREATE DATABASE NFT;
 USE NFT;
 
 CREATE TABLE user (
-  id int NOT NULL AUTO_INCREMENT,
+  ID int NOT NULL AUTO_INCREMENT,
   username varchar(40) UNIQUE,
   email varchar(40),
   password varchar(64),
@@ -19,23 +19,18 @@ CREATE TABLE user (
 );
 
 CREATE TABLE picture (
-  id int NOT NULL AUTO_INCREMENT,
+  ID int NOT NULL AUTO_INCREMENT,
   upload varchar(255),
   title varchar(20),
   description varchar(50),
-  price_sell NOT NULL ,
-  price_bid NOT NULL,
+  price_sell DECIMAL(10,2) NOT NULL ,
+  price_bid DECIMAL(10,2) NOT NULL,
   Domain_name varchar(30),
-  soponsoring NOT NULL,
+  soponsoring boolean,
   PRIMARY KEY (ID)
 );
 
-CREATE TABLE user_likes(
-  id int NOT NULL AUTO_INCREMENT,
-  user_id ,
-  picture_id ,
-  PRIMARY KEY (ID)
-)
+
 
 /*  Execute this file from the command line by typing:
  *    mysql -u root -p < server/database-mysql/schema.sql
