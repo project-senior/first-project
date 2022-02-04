@@ -5,6 +5,7 @@ import { About } from "./components/Pages/About.jsx";
 import { Login } from "./components/Pages/Login.jsx";
 import { Contact } from "./components/Pages/Contact.jsx";
 import { User } from "./components/Pages/User.jsx";
+import { Profile } from "./components/Pages/Profile.jsx";
 import React from "react";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/contact" component={Contact} />
             <Route path="/user" component={User} />
+            <Route path="/profile" component={Profile} />
           </Switch>
         </div>
       </Router>
