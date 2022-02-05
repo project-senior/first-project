@@ -180,7 +180,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; 
+  /* min-height: 50vh; */
 }
 
 .screen {
@@ -847,5 +847,107 @@ left: 0px;
 .submit:active {
   background-color: #06b;
 }
+#submit_contact{
+  /* background-color:  #0c0216a8 ; */
+background-color: rgba(8, 0, 0, 0.644);
+  /* background-size: cover; */
+  /* background-size: contain; */
+  border-radius: 3%;
+  width: 600px;
+  margin-top: -50px;
+  background: rgba(48, 2, 45, 0.1);
+  box-shadow: 0 8px 32px 0 hsla(0, 0%, 69%, 0.39);
+  backdrop-filter: blur( 8px );
+  -webkit-backdrop-filter: blur( 8px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+  
+}
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+textarea, select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#tt{
+  font-size: small;
+}
+#profile_body{
+  background-color: rgba(255, 255, 255, 0.466);
+  grid-column: 1;
+  grid-row: 2 / 5;
+  background-color: #14111470;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 600px;
+  margin-bottom: 200px;
+  justify-content:center;
+  position:unset fixed;
+  text-align:center;
+  
 
+  
+
+}
+#pts{
+  color: #5eff00a4;
+}
+#card{
+  
+    grid-column: 1;
+    grid-row: 2 / 5;
+    background-color: #14111470;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 700px;
+}
+
+#button {
+  background-color: #a0198eb7; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 /* //////////   all nft data ////////// */
