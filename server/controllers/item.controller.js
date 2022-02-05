@@ -86,25 +86,22 @@ var login =(req,res)=>{
     }
    
 }
-// UNCOMMENT IF USING MONGOOSE WITH PROMISES
-// var selectAll = function (req, res) {
-//   Item.find({})
-//     .then((items) => {
-//       res.status(200).send(items);
-//     })
-//     .catch((error) => {
-//       res.status(500).send(error);
-//     });
-// };
 
-// UNCOMMENT IF USING MONGOOSE WITH PROMISES & ASYNC AWAIT
-// var selectAll = async function (req, res) {
-//   try {
-//     const items = await Item.find({});
-//     res.status(200).send(items);
-//   } catch (error) {
-//     res.status(200).send(error);
-//   }
-// };
+// add post to to sell product 
+var sellProduct=function(req,res){
+    
+var params=[req.body.upload ,req.body.title , req.body.description   ,req.body.price_bid  ]
+console.log(params);
+var str="INSERT INTO picture (upload ,title , description   ,price_bid  ) VALUES (?,?,?,?)"
+db.query(str,params,(err,result)=>{
+    if(err){
+        throw(err)
+    }else{
+        res.send("post submitted")
+    }
+})
+}
 
-module.exports = { selectAll , signUp , login};
+
+
+module.exports = { selectAll , signUp , login , sellProduct};

@@ -23,10 +23,10 @@ CREATE TABLE picture (
   upload varchar(255),
   title varchar(20),
   description varchar(50),
-  price_sell DECIMAL(10,2) NOT NULL ,
+  -- price_sell DECIMAL(10,2) NOT NULL ,
   price_bid DECIMAL(10,2) NOT NULL,
-  Domain_name varchar(30),
-  soponsoring boolean,
+  -- Domain_name varchar(30),
+  -- soponsoring boolean,
   PRIMARY KEY (ID)
 );
 

@@ -1,44 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import Login from './components/login';
-import Signup from './components/signup';
-import Home from './components/home';
+import App from './App.jsx';
+import reportWebVitals from './reportWebVitals.js';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: []
-    }
-  }
-
-  componentDidMount() {
-    $.ajax({
-      url: '/items',
-      success: (data) => {
-        this.setState({
-          items: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
-  }
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('app')
+);
 
 
-  render () {
-    return (<div>
-
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-      <Login />
-      <Signup />
-      <Home />
-
-    </div>)
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
