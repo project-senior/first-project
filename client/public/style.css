@@ -157,7 +157,7 @@ code {
 /* ////////////////////////////////////// */
 /* ////////////         LogIn css                    ////////////// */
 
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+/* @import url("https://fonts.googleapis.com/css?family=Raleway:400,700"); */
 
 * {
   box-sizing: border-box;
@@ -195,6 +195,12 @@ body {
   z-index: 1;
   position: relative;
   height: 100%;
+  background: rgba(48, 2, 45, 0.1);
+  box-shadow: 0 8px 32px 0 hsla(0, 0%, 69%, 0.39);
+  backdrop-filter: blur( 8px );
+  -webkit-backdrop-filter: blur( 8px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .screen__background {
