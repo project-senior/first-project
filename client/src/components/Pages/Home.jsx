@@ -91,7 +91,7 @@ export const Home = () => {
               Nft Image
             </label>
           </div>
-          <button onClick={uploadimage}>Submit</button>
+          <button id="button" onClick={uploadimage}>Submit</button>
         </div>
       </form>
       {/* ////////// */}

@@ -733,7 +733,11 @@ backdrop-filter: blur( 4.5px );
 -webkit-backdrop-filter: blur( 4.5px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
-left: 0px;
+display: inline-block;
+vertical-align: middle;
+float: center;
+margin-left: 40px;
+
 }
 
 .title {
@@ -844,6 +848,18 @@ left: 0px;
 .submit:active {
   background-color: #06b;
 }
+
+
+  #button {
+    background-color: #a0198eb7; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 
 /* //////////   all nft data ////////// */
 
