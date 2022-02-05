@@ -7,6 +7,7 @@ import { Contact } from "./components/Pages/Contact.jsx";
 import { User } from "./components/Pages/User.jsx";
 import { Profile } from "./components/Pages/Profile.jsx";
 import React from "react";
+import { Signup } from "./components/Pages/Signup.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/user" component={User} />
             <Route path="/profile" component={Profile} />
+            <Route path="/signup" component={Signup} />
           </Switch>
         </div>
       </Router>
