@@ -90,9 +90,9 @@ var login =(req,res)=>{
 // add post to to sell product 
 var sellProduct=function(req,res){
     
-var params=[req.body.upload ,req.body.title , req.body.description , req.body.price_sell   ,req.body.price_bid  , req.body.Domain_name ,req.body.soponsoring]
+var params=[req.body.upload ,req.body.title , req.body.description   ,req.body.price_bid  ]
 console.log(params);
-var str="INSERT INTO picture (upload ,title , description , price_sell   ,price_bid  , Domain_name ,soponsoring) VALUES (?,?,?,?,?,?,?)"
+var str="INSERT INTO picture (upload ,title , description   ,price_bid  ) VALUES (?,?,?,?)"
 db.query(str,params,(err,result)=>{
     if(err){
         throw(err)
@@ -101,6 +101,7 @@ db.query(str,params,(err,result)=>{
     }
 })
 }
+
 
 
 module.exports = { selectAll , signUp , login , sellProduct};
