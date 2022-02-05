@@ -1,5 +1,5 @@
 
-
+import React from "react";
 import nftdata from "../nftdata.js";
 
 export const User = () => {
