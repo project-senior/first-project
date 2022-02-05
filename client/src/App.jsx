@@ -4,9 +4,10 @@ import { Home } from "./components/Pages/Home.jsx";
 import { About } from "./components/Pages/About.jsx";
 import { Login } from "./components/Pages/Login.jsx";
 import { Contact } from "./components/Pages/Contact.jsx";
-import { User } from "./components/Pages/User.jsx";
+import { Marketplace } from "./components/Pages/Marketplace.jsx";
 import { Profile } from "./components/Pages/Profile.jsx";
 import React from "react";
+import { Signup } from "./components/Pages/Signup.jsx";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/login" component={Login} />
             <Route path="/contact" component={Contact} />
-            <Route path="/user" component={User} />
+            <Route path="/marketplace" component={Marketplace} />
             <Route path="/profile" component={Profile} />
+            <Route path="/signup" component={Signup} />
           </Switch>
         </div>
       </Router>
