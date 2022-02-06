@@ -54,44 +54,76 @@ export const Profile = () => {
   });
 
   function deletePost(title) {
-    axios.delete(`http://127.0.0.1:3000/api/items/deleteNft/${title}`).then(() => {
-      console.log("NFT deleted!");
-     
-    }).catch((err)=>{
-      console.log(err);
-    })
+    axios
+      .delete(`http://127.0.0.1:3000/api/items/deleteNft/${title}`)
+      .then(() => {
+        console.log("NFT deleted!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
   // const deletePost = (id) => {
-  
+
   //     // DELETE request using axios inside useEffect React hook
   //     axios
   //       .delete(`http://127.0.0.1:3000/api/items/deleteNft/${id}`)
   //       .then(() => console.log("Delete successful"));
 
   //     // empty dependency array means this effect will only run once (like componentDidMount in classes)
- 
+
   // };
   return (
     <div className="vvv">
+      <div className="picture_profile"></div>
       <form>
         <div className="form">
+          <div className="design">
+            <img
+              id="mypic"
+              src="https://nftb.mypinata.cloud/ipfs/QmatG2osoY93XFx51dLRDja4TuBi1bCxD4ABikGdJ9TQ7V"
+            ></img>
+          </div>
+          <div>
+            <h1>Wukong jhon </h1>
+          </div>
+          <div>
+            Fans<h1>8.579</h1>
+          </div>
+          <div>
+            <button className="follow">Follow</button>
+            <button className="foldit">Edit </button>
+          </div>
+          <div className="posts">
+            Posts
+            <h1>29</h1>
+          </div>
+          <div className="following">
+            following
+            <h1>127</h1>
+          </div>
+        </div>
+
+        <div className="insidef">
           <div className="title">Welcome</div>
           <div className="subtitle">Create your nft</div>
           <div className="input-container ic1">
-            <input
-              type="text"
-              value={title}
-              onChange={(e) => {
-                settitle(e.target.value);
-              }}
-            />
-            <input
-              type="text"
-              value={price_bid}
-              onChange={(e) => {
-                setprice_bid(e.target.value);
-              }}
-            />
+            <div className="kk">
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => {
+                  settitle(e.target.value);
+                }}
+              />
+              <input
+                type="text"
+                value={price_bid}
+                onChange={(e) => {
+                  setprice_bid(e.target.value);
+                }}
+              />
+            </div>
             <div className="cut"></div>
             <label for="firstname" className="placeholder">
               Nft Name
@@ -112,6 +144,7 @@ export const Profile = () => {
           </div>
           <div className="input-container ic2">
             <input
+              className=""
               type="file"
               name="upload"
               onChange={(e) => {
@@ -123,29 +156,44 @@ export const Profile = () => {
               Nft Image
             </label>
           </div>
-          <button onClick={uploadimage}>Submit</button>
+          <button className="upload" onClick={uploadimage}>
+            Upload
+          </button>
         </div>
       </form>
-      <div className="rrr">
-        {post.map((elem, i) => (
-          <div className="contai" key={i}>
-            <div className="car">
-              <div className="imgBx">
+      <div class="scroll">
+        <h1>My NFTs</h1>
+
+        <div className="rrr">
+          {post.map((elem, i) => (
+            <div class="card" key={i}>
+              <div class="imgBox">
                 <img
                   src={elem.upload}
                   cloudname="dhgzyelo6"
                   // public_id={elem.upload}
+                  alt="mouse corsair"
+                  class="mouse"
                 />
               </div>
-              <div className="content">
-                <h5>{elem.title}</h5>
-                <h5>{elem.price_bid}</h5>
+
+              <div class="contentBox">
+                <h3>Mouse Corsair M65</h3>
                 <p>{elem.description}</p>
-                <button onClick={()=>deletePost(elem.title)}>delete</button>
+                <h2 class="price">{elem.price_bid} €</h2>
+                <button class="buy" onClick={() => deletePost(elem.title)}>
+                  delete
+                </button>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+      <div className="bio">
+        <h1>Bio</h1>
+        <input type="text" name="bi"></input>
+        <div></div>
+        <button className="editbio">Edit</button>
       </div>
     </div>
   );
