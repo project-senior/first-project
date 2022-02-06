@@ -39,7 +39,7 @@ export const Signup = () => {
     }
 
     return (
-    <div>
+    <div className="ins">
       <form action="" class="form">
     <h1 className="form__title">Sign Up</h1>
     <div className="form__group">
