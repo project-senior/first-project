@@ -1,8 +1,7 @@
-// import React from "react";
-import axios from "axios";
 import { Image } from "cloudinary-react";
-import React, { useState } from "react";
-export const Home = () => {
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+export const Profile = () => {
   //// testing cloudinary
   const [image, setImage] = useState(null);
   const [title, settitle] = useState("");
@@ -21,10 +20,10 @@ export const Home = () => {
     axios
       .post("https://api.cloudinary.com/v1_1/dhgzyelo6/image/upload", form)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         //post
-        axios.post("/api/items/sellProduct", {
-          upload: response.data.public_id,
+        axios.post("http://127.0.0.1:3000/api/items/sellProduct", {
+          upload: response.data.secure_url,
           title: title,
           description: description,
           // price_sell:price_sell,
@@ -40,24 +39,38 @@ export const Home = () => {
         console.log(err);
       });
   };
-  // <Image  cloudName='dhgzyelo6' public_id = public_id />
+
+  const [post, setPosts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:3000/api/items/fetch")
+      .then((res) => {
+        // console.log(res);
+        setPosts(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
   return (
-    <div className="home">
-      <div className="sign">
-        <span className="fast-flicker">Wel</span>COM-
-        <span className="flicker">TO N</span>FT
-      </div>
-{/* /////////// */}
-<form>
+    <div className="vvv">
+      <form>
         <div className="form">
           <div className="title">Welcome</div>
-          <div className="subtitle">Let's create your account!</div>
+          <div className="subtitle">Create your nft</div>
           <div className="input-container ic1">
             <input
               type="text"
               value={title}
               onChange={(e) => {
                 settitle(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              value={price_bid}
+              onChange={(e) => {
+                setprice_bid(e.target.value);
               }}
             />
             <div className="cut"></div>
@@ -94,34 +107,26 @@ export const Home = () => {
           <button onClick={uploadimage}>Submit</button>
         </div>
       </form>
-      {/* ////////// */}
-     
-      <div className="container-fluid p-0">
-        <div className="footer ">
-          <p className="main-title">Shortly</p>
-
-          <div className="title-wrap">
-            <p className="title">Features</p>
-            <p className="sub-title">Link Shortening</p>
-            <p className="sub-title">Branded Links</p>
-            <p className="sub-title">Support</p>
+      <div className="rrr">
+        {post.map((elem, i) => (
+          <div className="contai" key={i}>
+            <div className="car">
+              <div className="imgBx">
+                <img
+                  src={elem.upload}
+                  cloudname="dhgzyelo6"
+                  public_id={elem.upload}
+                />
+              </div>
+              <div className="content">
+                <h5>{elem.title}</h5>
+                <h5>{elem.price_bid}</h5>
+                <p>{elem.description}</p>
+              </div>
+            </div>
           </div>
-          <div className="title-wrap">
-            <p className="title">Resources</p>
-            <p className="sub-title">Blog</p>
-            <p className="sub-title">Developers</p>
-            <p className="sub-title">Analytics</p>
-          </div>
-          <div className="title-wrap">
-            <p className="title">Company</p>
-            <p className="sub-title">About</p>
-            <p className="sub-title">Our Team</p>
-            <p className="sub-title">Careers</p>
-            <p className="sub-title">Contact</p>
-          </div>
-        </div>
+        ))}
       </div>
-      {/* /// carousel /// */}
     </div>
   );
 };
