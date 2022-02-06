@@ -27,6 +27,7 @@ const signup =(e)=>{
               console.log("hhhhh",result.data)
               history.push("/marketplace")
                 }else{
+
                 }
             })
         }).catch(err=>{
