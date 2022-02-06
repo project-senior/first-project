@@ -183,14 +183,34 @@ body {
   /* min-height: 50vh; */
 }
 
-.screen {
-  background: linear-gradient(90deg, #5d54a4, #7c78b8);
-  position: relative;
+ .screen {
+  background-color: #14111470;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
   height: 600px;
-  width: 360px;
-  box-shadow: 0px 0px 24px #5c5696;
+  margin-bottom: 10 px;
+  justify-content:center;
+  position:unset fixed;
+  text-align:center;
+  margin-top: -150px;
+  background: rgba( 255, 255, 255, 0.05 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 2.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+  
 }
-
+/*
 .screen__content {
   z-index: 1;
   position: relative;
@@ -247,12 +267,15 @@ body {
   top: 420px;
   right: 50px;
   border-radius: 60px;
-}
+} */
 
 .login {
   width: 320px;
   padding: 30px;
-  padding-top: 156px;
+  padding-top: 110px;
+  margin-left: 73%;
+  
+  
 }
 
 .login__field {
@@ -369,7 +392,7 @@ body {
 
 
 .footer {
-  background-color: #1c1a21;
+  background-color: #dabd1831;
   position: relative;
   overflow-x: hidden !important;
   color: white;
@@ -377,8 +400,8 @@ body {
   display:inline-flex;
   justify-content: center;
   flex-direction: row;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   /* bottom: 0px; */
 }
 
@@ -502,7 +525,9 @@ body {
 }
 
 .sign {
-  position: relative;
+  position:absolute;
+  
+  margin-top: -220px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -864,7 +889,8 @@ background-color: rgba(8, 0, 0, 0.644);
   
   
 }
-input[type=text], select {
+/* // input[type=text], select { */
+  .contact{
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -873,7 +899,7 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type=email], select {
+/* input[type=email], select {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -881,8 +907,8 @@ input[type=email], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
-textarea, select {
+} */ 
+/* textarea, select {
   width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -890,9 +916,9 @@ textarea, select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
+} */
 #tt{
-  font-size: small;
+ font-size: small;
 }
 #profile_body{
   background-color: rgba(255, 255, 255, 0.466);
@@ -950,4 +976,24 @@ textarea, select {
   display: inline-block;
   font-size: 16px;
 }
+#points{
+  color: rgba(20, 189, 15, 0.644);
+  margin-top: 13px;
+}
+.logg{
+  font-size:xx-large;
+  color: #c6c7b4bb;
+}
+.ins{
+  font-size: medium;
+}
+.helloo{
+  height: 400px;
+  width: 400px;
+margin-left: -850px;
+margin-top: -900px;
+margin-bottom: 70px;
+
+}
+
 /* //////////   all nft data ////////// */
