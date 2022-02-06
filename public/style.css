@@ -1134,3 +1134,42 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
+
+.container-gift-card{
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 55px;
+    justify-items: center;
+    align-items: center;
+    margin-top: -7.3%;
+    backdrop-filter: blur( 14.5px );
+}
+.gift-card-title{
+  font-size: xxx-large;
+  position: absolute;
+  left: 43%;
+  top: -10%;
+  font-family: emoji;
+}
+.gift-card{
+  box-sizing: border-box;
+  width: 75%;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+  border: 1px solid rgb(60 201 255);
+}
+.gift-card-img  {
+  width: 80%;
+  height: 70%;
+  box-shadow: 0 8px 32px 0 rgb(255 0 0 / 0%);
+  border-radius: 40px;
+}
+.gift-card img.gift-card-img:hover {
+  box-shadow: 0 8px 32px 0 rgba(255, 0, 0, 0.719);
+}
+.money{
+  font-size: xx-large;
+  font-family: emoji;
+}

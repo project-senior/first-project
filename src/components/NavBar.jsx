@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import axios from "axios";
+import { Points } from "./Pages/Points.jsx";
 function NavBar() {
   const [click, setClick] = useState(false);
-
+  const money =()=>{
+    axios.get(`http://127.0.0.1:3000/api/items/user`)
+  }
   const handleClick = () => setClick(!click);
   return (
-    <>
+    
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
@@ -82,7 +85,16 @@ function NavBar() {
               </NavLink>
             </li>
             <div id="points">
-           <p >1000$</p>
+            <NavLink
+                exact
+                to="/points"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                0pts
+              </NavLink>
+           
           </div>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
@@ -91,7 +103,7 @@ function NavBar() {
           
         </div>
       </nav>
-    </>
+   
   );
 }
 
