@@ -1,13 +1,9 @@
-
 const bcrypt = require("bcrypt")
-
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 var db = require("../database-mysql");
 // var Item = require('../database-mongo/Item.model.js');
-
 // UNCOMMENT IF USING MYSQL WITH CALLBACKS
-
-// selectAll function to select every item on the picture database to manipulated throw the home page 
+// selectAll function to select every item on the picture database to manipulated throw the home page
 var selectAll = function (req, res) {
   db.query("SELECT * FROM picture", (err, result, fields) => {
     if (err) {
@@ -18,8 +14,7 @@ var selectAll = function (req, res) {
 
   });
 };
-
-// signUp function for the user so he can be access to the website 
+// signUp function for the user so he can be access to the website
 var signUp = (req,res)=>{
     // check if we have already that user or not on the NFT database in the user table
     db.query(`SELECT * FROM user where email = "${req.body.email}"`,(err,result)=>{
@@ -44,10 +39,7 @@ var signUp = (req,res)=>{
             
         }
     })
-    
-    
 }
-
 // login function for the user so he can access to the website if he already have an account
 var login =(req,res)=>{
     if(req.body.emailOrUsername.includes("@")){
@@ -122,10 +114,8 @@ var login =(req,res)=>{
     // }
    
 }
-
-// add post to to sell product 
+// add post to to sell product
 var sellProduct=function(req,res){
-    
 var params=[req.body.upload ,req.body.title , req.body.description   ,req.body.price_bid  ]
 console.log(params);
 var str="INSERT INTO picture (upload ,title , description   ,price_bid  ) VALUES (?,?,?,?)"
@@ -137,7 +127,4 @@ db.query(str,params,(err,result)=>{
     }
 })
 }
-
-
-
 module.exports = { selectAll , signUp , login , sellProduct};
