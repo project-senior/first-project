@@ -45,9 +45,9 @@ export const Home = () => {
             <i className="button__icon fas fa-chevron-right"></i>
           </button>				
         </form>
-        <img className="helloo" src="https://i.pinimg.com/564x/7c/39/b9/7c39b9320f08e7b1d2f101d65191d6fe.jpg"></img>
-
+        <h1 id="helloo">Register now !</h1>
       </div>
+      
 
 
 
@@ -86,6 +86,14 @@ export const Home = () => {
             <p className="sub-title">Contact</p>
           </div>
         </div>
+        <p id="description">What is NFT art crypto?
+        From banking to NFT art collecting
+        
+        NFTs, or non-fungible tokens, 
+        are noninterchangeable digital assets stored on a blockchain. 
+        They usually take the form of a picture, video, or audio file 
+        in a digital format. NFTs can be sold, traded, or leased like 
+        any real-world asset.</p>
       </div>
       {/* /// carousel /// */}
     </div>

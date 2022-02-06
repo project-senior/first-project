@@ -762,8 +762,10 @@ backdrop-filter: blur( 4.5px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 left: 0px;
+margin-left: 1000px;
+margin-bottom: 150px;
+margin-top: -100px;
 }
-
 .title {
   color: #eee;
   font-family: sans-serif;
@@ -987,13 +989,21 @@ background-color: rgba(8, 0, 0, 0.644);
 .ins{
   font-size: medium;
 }
-.helloo{
-  height: 400px;
-  width: 400px;
-margin-left: -850px;
-margin-top: -900px;
-margin-bottom: 70px;
+#helloo{
+  
+margin-left: -158px;
+margin-top: -290px;
+margin-bottom: 140px;
+margin-right: 180px;
+color: rgba(255, 255, 255, 0.801);
+
 
 }
+#description{
+  font-size: small;
+  color: rgba(245, 222, 179, 0.329);
+}
+
+
 
 /* //////////   all nft data ////////// */
