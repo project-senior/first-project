@@ -2,7 +2,7 @@ const router = require('express').Router();
 const itemController = require("../controllers/item.controller");
 
 router.get("/", itemController.selectAll);
-router.post("/sign-up",itemController.signUp)
+router.post("/signup",itemController.signUp)
 router.get("/login",itemController.login)
 router.post("/sellProduct",itemController.sellProduct)
 

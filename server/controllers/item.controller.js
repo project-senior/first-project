@@ -1,5 +1,5 @@
 
-
+const bcrypt = require("bcrypt")
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 var db = require("../database-mysql");
@@ -15,6 +15,7 @@ var selectAll = function (req, res) {
     } else {
       res.status(200).send(result);
     }
+    
   });
 };
 
@@ -24,15 +25,23 @@ var signUp = (req,res)=>{
     db.query(`SELECT * FROM user where email = "${req.body.email}"`,(err,result)=>{
         if(err){
             throw err
-        }else if(result.length === 0){
-            // insert the user infos into the user table on the NFT database
-            db.query(`INSERT INTO user (username , email , password , age , phonenumber , profile_picture) VALUES ("${req.body.username}","${req.body.email}","${req.body.password}","${req.body.age}","${req.body.phonenumber}","${req.body.profile_picture}")`,(err,result)=>{
-                if(err){
-                    throw err
-                }else{
-                    res.send("1 user inserted")
-                }
-            })
+        }else if(result.length === 0){ 
+            if(req.body.email.includes("@")&&req.body.password.length>8 &&req.body.password.length<25 && req.body.password.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]/)){
+                const salt =   bcrypt.genSaltSync()
+                const hashedPaswword =  bcrypt.hashSync(req.body.password, salt)
+                // insert the user infos into the user table on the NFT database
+                db.query(`INSERT INTO user (username , email , password , age , phonenumber , profile_picture) VALUES ("${req.body.username}","${req.body.email}","${hashedPaswword}","${req.body.age}","${req.body.phonenumber}","${req.body.profile_picture}")`,(err,result)=>{
+                    if(err){
+                        throw err
+                    }else{
+                        res.send("1 user inserted")
+                    }
+                })
+            }
+            else{
+                console.log("ghalet")
+            }
+            
         }
     })
     
@@ -53,13 +62,11 @@ var login =(req,res)=>{
                 throw err
             }else{
                 // check the password if it match 
-                if(result[0].password === req.body.passwordLogin){
-                    res.send("Welcome")
-                }
-                // if it doesn't match
-                else{
-                    res.send("Password not good")
-                }
+                const salt =   bcrypt.genSaltSync()
+                const hashedPaswword =  bcrypt.hashSync(req.body.password, salt)
+                bcrypt.compareSync(req.body.password,hashedPaswword)
+                
+        
             }
         })
         // if he puts his username and it exist in the user table
@@ -70,13 +77,9 @@ var login =(req,res)=>{
                 throw err
             }else{
                 // check the password if it match 
-                if(result[0].password === req.body.passwordLogin){
-                    res.send("Welcome")
-                }
-                // if it doesn't match
-                else{
-                    res.send("Password not good")
-                }
+                const salt =   bcrypt.genSaltSync()
+                const hashedPaswword =  bcrypt.hashSync(req.body.password, salt)
+                bcrypt.compareSync(req.body.password,hashedPaswword)
             }
         })
     }

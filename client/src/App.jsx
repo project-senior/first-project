@@ -8,10 +8,10 @@ import { User } from "./components/Pages/User.jsx";
 import { Profile } from "./components/Pages/Profile.jsx";
 import React from "react";
 import { Signup } from "./components/Pages/Signup.jsx";
+import { Redirect } from "react-router-dom";
 
 function App() {
   return (
-    <>
       <Router>
         <NavBar />
         <div className="pages">
@@ -22,11 +22,11 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/user" component={User} />
             <Route path="/profile" component={Profile} />
-            <Route path="/signup" component={Signup} />
+            <Route path="/Signup" component={Signup} />
           </Switch>
         </div>
       </Router>
-    </>
+    
   );
 }
 

@@ -35,10 +35,10 @@ export const Home = () => {
             <i className="button__icon fas fa-chevron-right"></i>
           </button>				
           
-          <button className="button login__submit" >
-          <Link to="/Signup"><span className="button__text">Create Account</span></Link>
+          <Link to="/Signup"><button className="button login__submit" >
+          <span className="button__text">Create Account</span>
             <i className="button__icon fas fa-chevron-right"></i>
-          </button>				
+          </button>	</Link>	
         </form>
       </div>
       <div className="screen__background">

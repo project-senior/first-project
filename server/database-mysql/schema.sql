@@ -9,9 +9,8 @@ CREATE TABLE user (
   username varchar(40) UNIQUE,
   email varchar(40),
   password varchar(64),
-  salt varchar(255),
-  age datetime ,
-  phonenumber varchar(12),
+  age int ,
+  phonenumber int,
   profile_picture varchar(255),
 
   -- description varchar(50) NOT NULL,
@@ -23,10 +22,10 @@ CREATE TABLE picture (
   upload varchar(255),
   title varchar(20),
   description varchar(50),
-  -- price_sell DECIMAL(10,2) NOT NULL ,
+  price_sell DECIMAL(10,2) NOT NULL ,
   price_bid DECIMAL(10,2) NOT NULL,
-  -- Domain_name varchar(30),
-  -- soponsoring boolean,
+  Domain_name varchar(30),
+  soponsoring boolean,
   PRIMARY KEY (ID)
 );
 
