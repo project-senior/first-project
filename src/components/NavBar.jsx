@@ -40,12 +40,12 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/user"
+                to="/marketplace"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                User
+               Market Place
               </NavLink>
             </li>
             <li className="nav-item">
@@ -70,10 +70,25 @@ function NavBar() {
                 Contact Us
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/profile"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Profile
+              </NavLink>
+            </li>
+            <div id="points">
+           <p >1000$</p>
+          </div>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
+          
         </div>
       </nav>
     </>
