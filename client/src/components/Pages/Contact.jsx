@@ -22,19 +22,19 @@ export const Contact = () => {
           <div id="submit_contact">
               <div>
                 <h6 id="tt">name:</h6>
-                <input type="text" placeholder="Name" name="name"/>
+                <input className="contact" type="text" placeholder="Name" name="name"/>
               </div>
               <div>
                 <h6 id="tt">Email:</h6>
-                <input type="email" placeholder="Email Adress" name="email"/>
+                <input className="contact" type="email" placeholder="Email Adress" name="email"/>
               </div>
               
               <div>
                 <p id="tt">Your message:</p>
-                <textarea className="textarea" cols="30" rows="8" placeholder="Your Message" name="message"></textarea>
+                <textarea className="contact"  cols="30" rows="8" placeholder="Your Message" name="message"></textarea>
               </div>
               <div>
-                <input id="button" type="submit" className="button message" value="Send Message"/>
+                <input  id="button" type="submit" className="button message" value="Send Message"/>
               </div>
           </div>
            

@@ -2,7 +2,7 @@ import React from "react";
 
 export const Signup = () => {
     return (
-    <div>
+    <div className="ins">
       <form action="" class="form">
     <h1 class="form__title">Sign Up</h1>
     <div class="form__group">

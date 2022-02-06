@@ -19,13 +19,18 @@ export const Home = () => {
       </div>
 {/* /////////// */}
 <div className="container">
+
     <div className="screen">
+
       <div className="screen__content">
+
         <form action="" className="login">
           <div className="login__field">
+          <h4 className="logg">login</h4>
             <i className="login__icon fas fa-user"></i>
             <input type="text" className="login__input" placeholder="User name / Email"/>
           </div>
+   
           <div className="login__field">
             <i className="login__icon fas fa-lock"></i>
             <input type="password" className="login__input" placeholder="Password"/>
@@ -40,8 +45,14 @@ export const Home = () => {
             <i className="button__icon fas fa-chevron-right"></i>
           </button>				
         </form>
+        <img className="helloo" src="https://i.pinimg.com/564x/7c/39/b9/7c39b9320f08e7b1d2f101d65191d6fe.jpg"></img>
+
       </div>
+
+
+
       <div className="screen__background">
+
         <span className="screen__background__shape screen__background__shape4"></span>
         <span className="screen__background__shape screen__background__shape3"></span>		
         <span className="screen__background__shape screen__background__shape2"></span>
