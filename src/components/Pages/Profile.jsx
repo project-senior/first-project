@@ -68,12 +68,26 @@ export const Profile = () => {
         </div>
         <div>
         Fans<h1>8.579</h1> 
-        <button className="follow">Follow</button>
         
+       
         </div>
+        <div>
+        <button className="follow">Follow</button>
+        <button className="foldit">Edit </button>
+        </div>
+        <div className="posts">
+        Posts
+        <h1>29</h1>
+        </div>
+        <div className="following">
+        following
+        <h1>127</h1>
+        </div>
+        
 
 
         </div>
+        
         <div className="insidef">
         
           <div className="title">Welcome</div>
@@ -131,20 +145,8 @@ export const Profile = () => {
         </div>
       </form>
       <div class="scroll">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when a
-      n unknown printer took a galley of type and scrambled it to make a type specimen book. 
-      It has survived not only five centuries, but also the leap into electronic typesetting, 
-      remaining essentially unchanged. It was popularised in the 1960s with the release of 
-      Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-      software like Aldus PageMaker including versions of Lorem Ipsum. It is a long 
-      established fact that a reader will be distracted by the readable content of a page
-      when looking at its layout. The point of using Lorem Ipsum is that it has a 
-      more-or-less normal distribution of letters, as opposed to using 'Content here, 
-      content here', making it look like readable English. Many desktop publishing packages
-      and web page editors now use Lorem Ipsum as their default model text, and a search 
-      for 'lorem ipsum' will uncover many web sites still in their infancy.
-    </div>
+      <h1>My NFTs</h1>
+    
       <div className="rrr">
         {post.map((elem, i) => (
           <div className="contai" key={i}>
@@ -154,7 +156,9 @@ export const Profile = () => {
                   src={elem.upload}
                   cloudname="dhgzyelo6"
                   // public_id={elem.upload}
+                  
                 />
+                
               </div>
               <div className="content">
                 <h5>{elem.title}</h5>
@@ -164,6 +168,15 @@ export const Profile = () => {
             </div>
           </div>
         ))}
+       
+        </div>
+        
+      </div>
+      <div className="bio">
+         <h1>Bio</h1>
+         <input type="text" name="bi"></input>
+         <div></div>
+         <button className="editbio">Edit</button>
       </div>
     </div>
   );
