@@ -1,9 +1,7 @@
-
-import nftdata from "../nftdata.js";
 import { Image } from "cloudinary-react";
-import React, { useState } from "react";
-
-export const User = () => {
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+export const Profile = () => {
   //// testing cloudinary
   const [image, setImage] = useState(null);
   const [title, settitle] = useState("");
@@ -22,10 +20,10 @@ export const User = () => {
     axios
       .post("https://api.cloudinary.com/v1_1/dhgzyelo6/image/upload", form)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         //post
-        axios.post("/api/items/sellProduct", {
-          upload: response.data.public_id,
+        axios.post("http://127.0.0.1:3000/api/items/sellProduct", {
+          upload: response.data.secure_url,
           title: title,
           description: description,
           // price_sell:price_sell,
@@ -42,23 +40,38 @@ export const User = () => {
       });
   };
 
+  const [post, setPosts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:3000/api/items/fetch")
+      .then((res) => {
+        // console.log(res);
+        setPosts(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
   return (
-    <div>
+    <div className="vvv">
       <form>
-        <div className="form">
+        <div className="form"> 
+        <div className="insidef">
           <div className="title">Welcome</div>
-          <div className="subtitle">Let's create your account!</div>
+          <div className="subtitle">Create your nft</div>
           <div className="input-container ic1">
-            {/* <input name="username"  type="text" />
-            <input name="email"  type="text" />
-            <input name="password"  type="text" />
-            <input name="age"  type="text" />
-            <input name="phonenumber"  type="text" /> */}
-             <input
+            <input
               type="text"
               value={title}
               onChange={(e) => {
                 settitle(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              value={price_bid}
+              onChange={(e) => {
+                setprice_bid(e.target.value);
               }}
             />
             <div className="cut"></div>
@@ -78,7 +91,7 @@ export const User = () => {
             <label for="lastname" className="placeholder">
               Nft description
             </label>
-          </div> 
+          </div>
           <div className="input-container ic2">
             <input
               type="file"
@@ -93,27 +106,29 @@ export const User = () => {
             </label>
           </div>
           <button onClick={uploadimage}>Submit</button>
-        </div>
-      </form>
-      <div className="carta">
-      {nftdata.map((elem, i) => (
-        <div class="news-card">
-          <a href="#" class="news-card__card-link"></a>
-          <img src={elem.img} />
-          <div class="news-card__text-wrapper">
-            <h6>{elem.name}</h6>
-            <div class="news-card__post-date">
-              {" "}
-              <h6>{elem.price}</h6>
-            </div>
-            <div class="news-card__details-wrapper">
-              <p>{elem.description}</p>
-            </div>
           </div>
         </div>
-      ))}
+      </form>
+      <div className="rrr">
+        {post.map((elem, i) => (
+          <div className="contai" key={i}>
+            <div className="car">
+              <div className="imgBx">
+                <img
+                  src={elem.upload}
+                  cloudname="dhgzyelo6"
+                  public_id={elem.upload}
+                />
+              </div>
+              <div className="content">
+                <h5>{elem.title}</h5>
+                <h5>{elem.price_bid}</h5>
+                <p>{elem.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-    </div>
-   
   );
 };
