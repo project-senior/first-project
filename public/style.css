@@ -755,25 +755,33 @@ body {
   display: flex;
   justify-content: center;
 }
+#mypic{
+  position: relative;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin-top: -50px;
+ 
+}
 
 .form {
   /* background-color: #15172b; */
   border-radius: 20px;
   box-sizing: border-box;
-  height: 700px;
+  height: 350px;
   padding: 110px;
   width: 1450px;
-  background: rgba( 255, 255, 255, 0.1 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background: rgba(5, 5, 5, 0.459);
+box-shadow: 0 8px 32px 0 rgba(14, 2, 37, 0.705);
 backdrop-filter: blur( 4.5px );
 -webkit-backdrop-filter: blur( 4.5px );
 border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+border: 1px solid rgba(15, 4, 44, 0.18);
 display: inline-block;
 vertical-align: middle;
 float: center;
 /* margin-left: 40px; */
-margin-top: -100px;
+margin-top: -50px;
 padding-top: 20px;
 /* height: 80px; */
   /* display: flex; */
@@ -783,12 +791,61 @@ padding-top: 20px;
   /* position: sticky; */
   /* top: 0; */
   /* z-index: 20; */
+  position: relative;
+  /* display:-moz-box; */
+
+}
+.follow{
+  background-color: #a0198eb7; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 30px;
+}
+div.scroll {
+  background-color: #1405146e;
+  width: 600px;
+  height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 20px;
+  font-size: small;
+}
+
+
+.upload{
+  background-color:rgba(228, 178, 15, 0.842) ;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 
 }
 .insidef{
-  width: 200px;
+  
+  margin-top: 15px;
+  width: 400px;
   height: 400px;
   padding-left: 80%;
+  padding: 0%;
+  background: rgba(5, 5, 5, 0.459);
+  box-shadow: 0 8px 32px 0 rgba(14, 2, 37, 0.705);
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px );
+  border-radius: 10px;
+  border: 1px solid rgba(15, 4, 44, 0.18);
+  /* display: inline-block; */
+  vertical-align: middle;
+  /* float: center; */
+  text-align: center;
 }
 .title {
   color: #eee;
@@ -1032,8 +1089,8 @@ background-color: rgba(8, 0, 0, 0.644);
 }
 .contai .car .imgBx{
   position:relative;
-  width:260px;
-  height:260px;
+  width:200px;
+  height:200px;
   top:-60px;
   left:20px;
   z-index:1;

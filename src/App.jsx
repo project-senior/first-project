@@ -10,7 +10,6 @@ import React from "react";
 import { Signup } from "./components/Pages/Signup.jsx";
 function App() {
   return (
-    
       <Router>
         <NavBar />
         <div className="pages">
