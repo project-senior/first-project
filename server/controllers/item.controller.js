@@ -50,23 +50,22 @@ var signUp = (req,res)=>{
 
 // login function for the user so he can access to the website if he already have an account
 var login =(req,res)=>{
-    console.log(req.params)
-    if(req.params.username.includes("@")){
+    if(req.body.emailOrUsername.includes("@")){
         console.log("hi")
-        db.query(`SELECT * FROM user WHERE email = '${req.params.username}';`,(err,result)=>{
+        db.query(`SELECT * FROM user WHERE email = '${req.body.emailOrUsername}';`,(err,result)=>{
             if(err){
                 throw err
             }else{
                 console.log("taada")
                 var pass = result[0]
                 if(bcrypt.compareSync(req.body.passwordLogin,pass.password)){
-                    res.send("correct")
+                    res.send(result)
                 }else{
                     res.send('incorrect')
                 }
             }
         })
-    }else{db.query(`SELECT * FROM user WHERE username = '${req.params.username}'`,(err,result)=>{
+    }else{db.query(`SELECT * FROM user WHERE username = '${req.body.emailOrUsername}'`,(err,result)=>{
         if(err){
             throw err
         }else{
@@ -75,7 +74,7 @@ var login =(req,res)=>{
             var pass = result[0]
             if(bcrypt.compareSync(req.body.passwordLogin,pass.password)){
                 console.log("haya aad")
-                res.send("correct")
+                res.send(result)
             }else{
                 res.send('incorrect')
             }

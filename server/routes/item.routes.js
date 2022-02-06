@@ -4,7 +4,7 @@ const itemController = require("../controllers/item.controller");
 
 router.get("/", itemController.selectAll);
 router.post("/signup",itemController.signUp)
-router.get("/login/:username",itemController.login)
+router.post("/login",itemController.login)
 router.post("/sellProduct",itemController.sellProduct)
 
 module.exports = router;

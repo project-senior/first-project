@@ -10,7 +10,7 @@ export const Home = () => {
   const login = (e)=>{
     e.preventDefault()
     var params = {emailOrUsername:emailOrUsername,passwordLogin:passwordLogin}
-    axios.get(`/api/items/login/${emailOrUsername}`,params)
+    axios.post(`/api/items/login`,params)
     .then(result=>{
       console.log(result)
     }).catch(err=>{
