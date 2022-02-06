@@ -180,7 +180,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; 
+  /* min-height: 50vh; */
 }
 
 .screen {
@@ -488,10 +488,10 @@ body {
 
 /* ////////////// home page main section ////////////// */
 
-@font-face {
+/* @font-face {
   font-family: Clip;
   src: url("https://acupoftee.github.io/fonts/Clip.ttf");
-}
+} */
 
 body {
   background-color: #141114;
@@ -722,6 +722,8 @@ body {
   height: 100vh;
 } */
 
+
+
 .carta{
   align-items: center;
   
@@ -857,17 +859,177 @@ margin-left: 40px;
 .submit:active {
   background-color: #06b;
 }
+#submit_contact{
+  /* background-color:  #0c0216a8 ; */
+background-color: rgba(8, 0, 0, 0.644);
+  /* background-size: cover; */
+  /* background-size: contain; */
+  border-radius: 3%;
+  width: 600px;
+  margin-top: -50px;
+  background: rgba(48, 2, 45, 0.1);
+  box-shadow: 0 8px 32px 0 hsla(0, 0%, 69%, 0.39);
+  backdrop-filter: blur( 8px );
+  -webkit-backdrop-filter: blur( 8px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+  
+}
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+textarea, select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#tt{
+  font-size: small;
+}
+#profile_body{
+  background-color: rgba(255, 255, 255, 0.466);
+  grid-column: 1;
+  grid-row: 2 / 5;
+  background-color: #14111470;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 600px;
+  margin-bottom: 200px;
+  justify-content:center;
+  position:unset fixed;
+  text-align:center;
+  
 
+  
 
-  #button {
-    background-color: #a0198eb7; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
+}
+#pts{
+  color: #5eff00a4;
+}
+#card{
+  
+    grid-column: 1;
+    grid-row: 2 / 5;
+    background-color: #14111470;
     text-align: center;
-    text-decoration: none;
+    justify-content: center;
+    display: flex;
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
     display: inline-block;
-    font-size: 16px;
-  }
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 700px;
+}
 
-/* //////////   all nft data ////////// */
+#button {
+  background-color: #a0198eb7; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+/* //////////   profile cards data ////////// */
+
+.contai{
+  position:relative;
+  width:400px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: 30px;
+  padding:30px;
+  
+}
+.contai .car{
+  position:relative;
+  max-width: 300px;
+  height: 215px;
+  background:#fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgb(0,0,0,0.5);
+  transition: 0,3s ease-in-out;
+  
+}
+.contai .car:hover{
+  height: 420px;
+}
+.contai .car .imgBx{
+  position:relative;
+  width:260px;
+  height:260px;
+  top:-60px;
+  left:20px;
+  z-index:1;
+  box-shadow: 0 5px 20px rgb(0,0,0,0.2);
+}
+.contai .car .imgBx img{
+ max-width: 100%;
+ border-radius: 4px;
+}
+.contai .car .content{
+  position:relative;
+  margin-top: -140px;
+  padding:10px 15px;
+  text-align:center;
+  color:#111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.contai .car:hover .content{
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+}
+.rrr{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: -70px;
+  grid-row-gap: -20px;
+  padding:50px;
+}
+.vvv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
