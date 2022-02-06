@@ -9,7 +9,8 @@ export const Home = () => {
 
   const login = (e)=>{
     e.preventDefault()
-    axios.get("/api/items/login",{emailOrUsername:emailOrUsername,passwordLogin:passwordLogin})
+    var params = {emailOrUsername:emailOrUsername,passwordLogin:passwordLogin}
+    axios.get(`/api/items/login/${emailOrUsername}`,params)
     .then(result=>{
       console.log(result)
     }).catch(err=>{

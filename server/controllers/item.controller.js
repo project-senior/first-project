@@ -50,44 +50,77 @@ var signUp = (req,res)=>{
 
 // login function for the user so he can access to the website if he already have an account
 var login =(req,res)=>{
+    console.log(req.params)
+    if(req.params.username.includes("@")){
+        console.log("hi")
+        db.query(`SELECT * FROM user WHERE email = '${req.params.username}';`,(err,result)=>{
+            if(err){
+                throw err
+            }else{
+                console.log("taada")
+                var pass = result[0]
+                if(bcrypt.compareSync(req.body.passwordLogin,pass.password)){
+                    res.send("correct")
+                }else{
+                    res.send('incorrect')
+                }
+            }
+        })
+    }else{db.query(`SELECT * FROM user WHERE username = '${req.params.username}'`,(err,result)=>{
+        if(err){
+            throw err
+        }else{
+            console.log("taada")
+            console.log(req.body.passwordLogin)
+            var pass = result[0]
+            if(bcrypt.compareSync(req.body.passwordLogin,pass.password)){
+                console.log("haya aad")
+                res.send("correct")
+            }else{
+                res.send('incorrect')
+            }
+
+        }
+    })}
     // if he put his email so we check if it exist in the user table or not 
-    var  checkEmail =  db.query(`SELECT * FROM user where email = "${req.body.emailOrUsername}"`)
-    // if he put his username so we check if it exist in the user table or not
-    var checkUsername = db.query(`SELECT * FROM user where username = "${req.body.emailOrUsername}"`)
-    // if he puts his email and it exist in the user table
     
-    if(checkEmail.length!== 0){
-        // select that user 
-        db.query(`SELECT * FROM user where email = "${req.body.emailOrUsername}"`,(err,result)=>{
-            if(err){
-                throw err
-            }else{
-                console.log(result)
-                // check the password if it match 
-                // const salt =   bcrypt.genSaltSync()
-                // const hashedPaswword =  bcrypt.hashSync(req.body.passwordLogin, salt)
-                bcrypt.compareSync(req.body.passwordLogin,result[0].password)
-            }
-        })
-        // if he puts his username and it exist in the user table
-    }else if(checkUsername.length !== 0){
-        // select that user 
-        db.query(`SELECT * FROM user where username = "${req.body.emailOrUsername}"`,(err,result)=>{
-            if(err){
-                throw err
-            }else{
-                // check the password if it match 
-                console.log(result) 
-                // const salt =   bcrypt.genSaltSync()
-                // const hashedPaswword =  bcrypt.hashSync(req.body.passwordLogin, salt)
-                bcrypt.compareSync(req.body.passwordLogin,result[0].password)
-            }
-        })
-    }
-    // if there is no existing username or email in the user table 
-    else{
-        res.send("Email/username or password is incorrect")
-    }
+    // if he put his username so we check if it exist in the user table or not
+    
+    // if he puts his email and it exist in the user table
+    // console.log(checkEmail)
+    // if(checkEmail.values!== undefined){
+    //     // select that user 
+    //     db.query(`SELECT * FROM user where email = "${req.body.emailOrUsername}"`,(err,result)=>{
+    //         if(err){
+    //             throw err
+    //         }else{
+    //             console.log(result)
+    //             // check the password if it match 
+    //             // const salt =   bcrypt.genSaltSync()
+    //             // const hashedPaswword =  bcrypt.hashSync(req.body.passwordLogin, salt)
+    //             bcrypt.compareSync(req.body.passwordLogin,result[0].password)
+    //         }
+    //     })
+    //     // if he puts his username and it exist in the user table
+    // }else if(checkUsername.values !== undefined){
+    //     // select that user 
+    //     db.query(`SELECT * FROM user where username = "${req.body.emailOrUsername}"`,(err,result)=>{
+    //         if(err){
+    //             throw err
+    //         }else{
+    //             // check the password if it match 
+    //             console.log(result) 
+    //             // const salt =   bcrypt.genSaltSync()
+    //             // const hashedPaswword =  bcrypt.hashSync(req.body.passwordLogin, salt)
+    //             bcrypt.compareSync(req.body.passwordLogin,result[0].password)
+    //         }
+    //     })
+    // }
+    // // if there is no existing username or email in the user table 
+    // else{
+    //     console.log(req.body.passwordLogin)
+    //     res.send("Email/username or password is incorrect")
+    // }
    
 }
 

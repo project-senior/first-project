@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 // import { Redirect } from "react-router-dom";
-import { useHistory} from "react-router-dom";
+// import { useHistory} from "react-router-dom";
 
 export const Signup = () => {
     const [username,setusername] = useState("")
@@ -11,10 +11,10 @@ export const Signup = () => {
     const [phonenumber,setphonenumber] = useState("")
     const [profile_picture,setprofile_picture] = useState(null)
 // const [suc, setSuc] = useState(null)
-let history=useHistory()
+// let history=useHistory()
     
     const signup =(e)=>{
-        const navigate=useNavigate()
+        // const navigate=useNavigate()
         e.preventDefault()
         
         const form = new FormData()
@@ -26,11 +26,7 @@ let history=useHistory()
             axios.post("/api/items/signup",{username:username,email:email,password:password,age:age,phonenumber:phonenumber,profile_picture:response.data.secure_url})
             .then(result=>{
                 if(result.data !== "1 user inserted"){
-                    console.log("hhhhh",result.data)
-                   return history.send("/")
-                }else{
-                    
-                    return history.send("/")
+                   console.log("hi")
                 }
             })
             
