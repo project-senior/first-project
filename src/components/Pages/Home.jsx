@@ -35,6 +35,7 @@ export const Home = () => {
             <i className="login__icon fas fa-lock"></i>
             <input type="password" className="login__input" placeholder="Password"/>
           </div>
+
           <button className="button login__submit">
             <span className="button__text">Log In Now</span>
             <i className="button__icon fas fa-chevron-right"></i>
@@ -60,6 +61,7 @@ export const Home = () => {
       </div>		
     </div>
   </div>
+
       {/* ////////// */}
      
       <div className="container-fluid p-0">
