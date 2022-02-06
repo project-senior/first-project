@@ -115,7 +115,7 @@ export const Profile = () => {
                 <img
                   src={elem.upload}
                   cloudname="dhgzyelo6"
-                  public_id={elem.upload}
+                  // public_id={elem.upload}
                 />
               </div>
               <div className="content">
