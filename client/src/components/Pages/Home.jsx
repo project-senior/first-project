@@ -1,15 +1,22 @@
 // import React from "react";
 import axios from "axios";
-import React  from "react";
+import React , {useState}  from "react";
 import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 export const Home = () => {
-  // let navigate = useNavigate(); 
-  // const routeChange = () =>{ 
-  //   let path = '/signup'; 
-  //   navigate(path);
-  // }
-  
+  const [emailOrUsername,setemailOrUsername] = useState("")
+  const [passwordLogin,setpasswordLogin] = useState("")
+
+  const login = (e)=>{
+    e.preventDefault()
+    axios.get("/api/items/login",{emailOrUsername:emailOrUsername,passwordLogin:passwordLogin})
+    .then(result=>{
+      console.log(result)
+    }).catch(err=>{
+      console.log(err)
+    })
+
+  }
   // <Image  cloudName='dhgzyelo6' public_id = public_id />
   return (
     <div className="home">
@@ -28,14 +35,14 @@ export const Home = () => {
           <div className="login__field">
           <h4 className="logg">login</h4>
             <i className="login__icon fas fa-user"></i>
-            <input type="text" className="login__input" placeholder="User name / Email"/>
+            <input onChange={(e) => { setemailOrUsername(e.target.value) }} type="text" className="login__input" placeholder="User name / Email"/>
           </div>
    
           <div className="login__field">
             <i className="login__icon fas fa-lock"></i>
-            <input type="password" className="login__input" placeholder="Password"/>
+            <input onChange={(e) => { setpasswordLogin(e.target.value) }} type="password" className="login__input" placeholder="Password"/>
           </div>
-          <button className="button login__submit">
+          <button onClick={login} className="button login__submit">
             <span className="button__text">Log In Now</span>
             <i className="button__icon fas fa-chevron-right"></i>
           </button>				

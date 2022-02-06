@@ -2,6 +2,7 @@
 import nftdata from "../nftdata.js";
 import { Image } from "cloudinary-react";
 import React, { useState } from "react";
+import axios from "axios"
 
 export const User = () => {
   //// testing cloudinary

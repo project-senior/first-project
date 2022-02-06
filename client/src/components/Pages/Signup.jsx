@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 // import { Redirect } from "react-router-dom";
-import { useNavigate} from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 export const Signup = () => {
     const [username,setusername] = useState("")
@@ -10,7 +10,8 @@ export const Signup = () => {
     const [age,setage] = useState("")
     const [phonenumber,setphonenumber] = useState("")
     const [profile_picture,setprofile_picture] = useState(null)
-    // const [suc, setSuc] = useState(null)
+// const [suc, setSuc] = useState(null)
+let history=useHistory()
     
     const signup =(e)=>{
         const navigate=useNavigate()
@@ -26,10 +27,10 @@ export const Signup = () => {
             .then(result=>{
                 if(result.data !== "1 user inserted"){
                     console.log("hhhhh",result.data)
-                    
+                   return history.send("/")
                 }else{
-                    navigate("/contact")
                     
+                    return history.send("/")
                 }
             })
             

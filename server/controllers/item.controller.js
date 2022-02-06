@@ -15,7 +15,7 @@ var selectAll = function (req, res) {
     } else {
       res.status(200).send(result);
     }
-    
+
   });
 };
 
@@ -51,22 +51,22 @@ var signUp = (req,res)=>{
 // login function for the user so he can access to the website if he already have an account
 var login =(req,res)=>{
     // if he put his email so we check if it exist in the user table or not 
-    var checkEmail =  db.query(`SELECT * FROM user where email = "${req.body.emailOrUsername}"`)
+    var  checkEmail =  db.query(`SELECT * FROM user where email = "${req.body.emailOrUsername}"`)
     // if he put his username so we check if it exist in the user table or not
     var checkUsername = db.query(`SELECT * FROM user where username = "${req.body.emailOrUsername}"`)
     // if he puts his email and it exist in the user table
+    
     if(checkEmail.length!== 0){
         // select that user 
         db.query(`SELECT * FROM user where email = "${req.body.emailOrUsername}"`,(err,result)=>{
             if(err){
                 throw err
             }else{
+                console.log(result)
                 // check the password if it match 
-                const salt =   bcrypt.genSaltSync()
-                const hashedPaswword =  bcrypt.hashSync(req.body.password, salt)
-                bcrypt.compareSync(req.body.password,hashedPaswword)
-                
-        
+                // const salt =   bcrypt.genSaltSync()
+                // const hashedPaswword =  bcrypt.hashSync(req.body.passwordLogin, salt)
+                bcrypt.compareSync(req.body.passwordLogin,result[0].password)
             }
         })
         // if he puts his username and it exist in the user table
@@ -77,9 +77,10 @@ var login =(req,res)=>{
                 throw err
             }else{
                 // check the password if it match 
-                const salt =   bcrypt.genSaltSync()
-                const hashedPaswword =  bcrypt.hashSync(req.body.password, salt)
-                bcrypt.compareSync(req.body.password,hashedPaswword)
+                console.log(result) 
+                // const salt =   bcrypt.genSaltSync()
+                // const hashedPaswword =  bcrypt.hashSync(req.body.passwordLogin, salt)
+                bcrypt.compareSync(req.body.passwordLogin,result[0].password)
             }
         })
     }
