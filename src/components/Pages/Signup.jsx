@@ -25,7 +25,7 @@ const signup =(e)=>{
           .then(result=>{
             if(result.data === "1 user inserted"){
               console.log("hhhhh",result.data)
-              history.push("/")
+              history.push("/marketplace")
                 }else{
                 }
             })
@@ -35,10 +35,12 @@ const signup =(e)=>{
     }
     return (
     <div className="ins">
-      <form action="" class="form">
-    <h1 className="form__title">Sign Up</h1>
-    <div className="form__group">
-      <label >Username :</label>
+      <form action="" className="form_signup">
+    
+    <div class="signup">
+				<form>
+					
+					<label >Username :</label>
       <input onChange={(e) => { setusername(e.target.value) }} type="text" name="username"  placeholder="Your username" />
       <label >Email :</label>
       <input onChange={(e) => { setemail(e.target.value) }} type="text" name="email"  placeholder="Your email" />
@@ -50,10 +52,16 @@ const signup =(e)=>{
       <input onChange={(e) => { setphonenumber(e.target.value) }} type="number" name="phonenumber :"  placeholder="Your phonenumber :" />
       <label >Profile Picture :</label>
       <input type="file" name="profile_picture" onChange={(e) => { setprofile_picture(e.target.files[0]) }} />
-    </div>
-   <button onClick={signup} class="form__button" >Sign Up</button>
+					<button onClick={signup} class="form__button" >Sign Up</button>
+				</form>
+			</div>
+
+   
   </form>
     </div>
     );
   };
   //{ suc ? <Link to="/"></Link> : <Link to="/signup"></Link> }
+
+  
+			
