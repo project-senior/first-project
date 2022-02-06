@@ -81,10 +81,14 @@ function NavBar() {
                 Profile
               </NavLink>
             </li>
+            <div id="points">
+           <p >1000$</p>
+          </div>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
+          
         </div>
       </nav>
     </>

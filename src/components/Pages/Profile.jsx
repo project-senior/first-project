@@ -20,7 +20,7 @@ export const Profile = () => {
     axios
       .post("https://api.cloudinary.com/v1_1/dhgzyelo6/image/upload", form)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         //post
         axios.post("http://127.0.0.1:3000/api/items/sellProduct", {
           upload: response.data.secure_url,
@@ -45,7 +45,7 @@ export const Profile = () => {
     axios
       .get("http://127.0.0.1:3000/api/items/fetch")
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setPosts(res.data);
       })
       .catch((err) => {
@@ -57,7 +57,7 @@ export const Profile = () => {
       <form>
         <div className="form">
           <div className="title">Welcome</div>
-          <div className="subtitle">Let's create your account!</div>
+          <div className="subtitle">Create your nft</div>
           <div className="input-container ic1">
             <input
               type="text"
