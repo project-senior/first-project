@@ -45,8 +45,8 @@ export const Profile = () => {
     axios
       .get("http://127.0.0.1:3000/api/items/fetch")
       .then((res) => {
-        // console.log(res);
         setPosts(res.data);
+        console.log(post);
       })
       .catch((err) => {
         console.log(err);
@@ -54,11 +54,46 @@ export const Profile = () => {
   });
   return (
     <div className="vvv">
+    <div className="picture_profile">
+       
+    </div>
       <form>
-        <div className="form">
+        <div className="form"> 
+        <div className="design">
+          <img id="mypic" src="https://nftb.mypinata.cloud/ipfs/QmatG2osoY93XFx51dLRDja4TuBi1bCxD4ABikGdJ9TQ7V"></img>
+        </div>
+        <div>
+           <h1 >Wukong jhon </h1>
+           
+        </div>
+        <div>
+        Fans<h1>8.579</h1> 
+        
+       
+        </div>
+        <div>
+        <button className="follow">Follow</button>
+        <button className="foldit">Edit </button>
+        </div>
+        <div className="posts">
+        Posts
+        <h1>29</h1>
+        </div>
+        <div className="following">
+        following
+        <h1>127</h1>
+        </div>
+        
+
+
+        </div>
+        
+        <div className="insidef">
+        
           <div className="title">Welcome</div>
           <div className="subtitle">Create your nft</div>
           <div className="input-container ic1">
+          <div className="kk">
             <input
               type="text"
               value={title}
@@ -66,13 +101,14 @@ export const Profile = () => {
                 settitle(e.target.value);
               }}
             />
-            <input
+            <input 
               type="text"
               value={price_bid}
               onChange={(e) => {
                 setprice_bid(e.target.value);
               }}
             />
+            </div>
             <div className="cut"></div>
             <label for="firstname" className="placeholder">
               Nft Name
@@ -92,7 +128,7 @@ export const Profile = () => {
             </label>
           </div>
           <div className="input-container ic2">
-            <input
+            <input className=""
               type="file"
               name="upload"
               onChange={(e) => {
@@ -104,9 +140,13 @@ export const Profile = () => {
               Nft Image
             </label>
           </div>
-          <button onClick={uploadimage}>Submit</button>
+          <button className="upload" onClick={uploadimage}>Upload</button>
+          
         </div>
       </form>
+      <div class="scroll">
+      <h1>My NFTs</h1>
+    
       <div className="rrr">
         {post.map((elem, i) => (
           <div className="contai" key={i}>
@@ -116,7 +156,9 @@ export const Profile = () => {
                   src={elem.upload}
                   cloudname="dhgzyelo6"
                   // public_id={elem.upload}
+                  
                 />
+                
               </div>
               <div className="content">
                 <h5>{elem.title}</h5>
@@ -126,6 +168,15 @@ export const Profile = () => {
             </div>
           </div>
         ))}
+       
+        </div>
+        
+      </div>
+      <div className="bio">
+         <h1>Bio</h1>
+         <input type="text" name="bi"></input>
+         <div></div>
+         <button className="editbio">Edit</button>
       </div>
     </div>
   );
