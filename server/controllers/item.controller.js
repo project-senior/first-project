@@ -127,4 +127,31 @@ db.query(str,params,(err,result)=>{
     }
 })
 }
-module.exports = { selectAll , signUp , login , sellProduct};
+
+let updateNft=(req,res)=>{
+    var params=[req.body.upload ,req.body.title , req.body.description   ,req.body.price_bid , req.params.id]
+    var body="UPDATE picture SET upload=? ,title=?, description=?, price_bid=? WHERE id=?"
+    db.query(body,params,(err,data)=>{
+        if(err){
+            console.log(err)
+        }else{
+            console.log("update done")
+            res.send(data)
+        }
+    })
+}
+
+let deleteNft=(req,res)=>{
+    let params=[req.params.id]
+    console.log(params);
+    let body="DELETE FROM picture WHERE id=?"
+db.query(body,params,(err,data)=>{
+    if(err){
+        console.log("error delete")
+    }else{
+        res.send("deleted done")
+    }
+})
+}
+
+module.exports = { selectAll , signUp , login , sellProduct,updateNft,deleteNft};
