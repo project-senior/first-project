@@ -1,54 +1,32 @@
-// import React from "react";
+import ReactPlayer from "react-player"
 import axios from "axios";
 import React  from "react";
 import { Link } from "react-router-dom";
+
 // import { useNavigate } from "react-router-dom";
 export const Home = () => {
-  // let navigate = useNavigate(); 
-  // const routeChange = () =>{ 
-  //   let path = '/signup'; 
-  //   navigate(path);
-  // }
+  
+
+   
   
   // <Image  cloudName='dhgzyelo6' public_id = public_id />
+  
   return (
     <div className="home">
       <div className="sign">
-        <span className="fast-flicker">Wel</span>COM-
+        <span className="fast-flicker">Wel</span>COME-
         <span className="flicker">TO N</span>FT
       </div>
 {/* /////////// */}
 <div className="container">
 
     <div className="screen">
-
+      <div className="youspot">
       <div className="screen__content">
-
-        <form action="" className="login">
-          <div className="login__field">
-          <h4 className="logg">login</h4>
-            <i className="login__icon fas fa-user"></i>
-            <input type="text" className="login__input" placeholder="User name / Email"/>
-          </div>
-   
-          <div className="login__field">
-            <i className="login__icon fas fa-lock"></i>
-            <input type="password" className="login__input" placeholder="Password"/>
-          </div>
-
-          <button className="button login__submit">
-            <span className="button__text">Log In Now</span>
-            <i className="button__icon fas fa-chevron-right"></i>
-          </button>				
-          
-          <button className="button login__submit" >
-          <Link to="/Signup"><span className="button__text">Create Account</span></Link>
-            <i className="button__icon fas fa-chevron-right"></i>
-          </button>				
-        </form>
-        <img className="helloo" src="https://i.pinimg.com/564x/7c/39/b9/7c39b9320f08e7b1d2f101d65191d6fe.jpg"></img>
-
+    <ReactPlayer url="https://www.youtube.com/watch?v=8h1UtER31-U"/>
       </div>
+      </div>
+      
 
 
 
@@ -66,7 +44,7 @@ export const Home = () => {
      
       <div className="container-fluid p-0">
         <div className="footer ">
-          <p className="main-title">Shortly</p>
+         
 
           <div className="title-wrap">
             <p className="title">Features</p>
@@ -88,6 +66,14 @@ export const Home = () => {
             <p className="sub-title">Contact</p>
           </div>
         </div>
+        <p id="description">What is NFT art crypto?
+        From banking to NFT art collecting
+        
+        NFTs, or non-fungible tokens, 
+        are noninterchangeable digital assets stored on a blockchain. 
+        They usually take the form of a picture, video, or audio file 
+        in a digital format. NFTs can be sold, traded, or leased like 
+        any real-world asset.</p>
       </div>
       {/* /// carousel /// */}
     </div>
