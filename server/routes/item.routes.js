@@ -7,6 +7,6 @@ router.post("/signup",itemController.signUp)
 router.post("/login",itemController.login)
 router.post("/sellProduct",itemController.sellProduct)
 router.patch("/updateNft/:id",itemController.updateNft)
-router.delete("/deleteNft/:id",itemController.deleteNft)
+router.delete("/deleteNft/:title",itemController.deleteNft)
 
 module.exports = router;

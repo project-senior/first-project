@@ -52,6 +52,25 @@ export const Profile = () => {
         console.log(err);
       });
   });
+
+  function deletePost(title) {
+    axios.delete(`http://127.0.0.1:3000/api/items/deleteNft/${title}`).then(() => {
+      console.log("NFT deleted!");
+     
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
+  // const deletePost = (id) => {
+  
+  //     // DELETE request using axios inside useEffect React hook
+  //     axios
+  //       .delete(`http://127.0.0.1:3000/api/items/deleteNft/${id}`)
+  //       .then(() => console.log("Delete successful"));
+
+  //     // empty dependency array means this effect will only run once (like componentDidMount in classes)
+ 
+  // };
   return (
     <div className="vvv">
       <form>
@@ -122,6 +141,7 @@ export const Profile = () => {
                 <h5>{elem.title}</h5>
                 <h5>{elem.price_bid}</h5>
                 <p>{elem.description}</p>
+                <button onClick={()=>deletePost(elem.title)}>delete</button>
               </div>
             </div>
           </div>

@@ -141,17 +141,38 @@ let updateNft=(req,res)=>{
     })
 }
 
-let deleteNft=(req,res)=>{
-    let params=[req.params.id]
-    console.log(params);
-    let body="DELETE FROM picture WHERE id=?"
-db.query(body,params,(err,data)=>{
-    if(err){
-        console.log("error delete")
-    }else{
-        res.send("deleted done")
-    }
-})
-}
+// let deleteNft=(req,res)=>{
+//     let params=req.params.id
+//     console.log(params);
+//     let body="DELETE FROM picture WHERE id=?"
+// db.query(body,params,(err,data)=>{
+//     if(err){
+//         console.log("error delete")
+//     }else{
+//         res.send("deleted done")
+//     }
+// })
+// }
+
+var deleteNft = function (req, res) {
+    console.log(req.params.title);
+    
+    db.query(`SELECT * FROM picture WHERE title="${req.params.title}"`, (err, result, fields) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+          console.log(result);
+            var id=result[0].ID
+            db.query(`DELETE FROM picture WHERE id=${id}`,(err,result)=>{
+                if(err){
+                    res.status(500).send(err);
+                }else{
+                    console.log("data hhhh")
+                }
+            })
+      }
+  
+    });
+  };
 
 module.exports = { selectAll , signUp , login , sellProduct,updateNft,deleteNft};
