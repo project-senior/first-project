@@ -45,7 +45,6 @@ export const Profile = () => {
     axios
       .get("http://127.0.0.1:3000/api/items/fetch")
       .then((res) => {
-        // console.log(res);
         setPosts(res.data);
       })
       .catch((err) => {
@@ -80,6 +79,7 @@ export const Profile = () => {
         <div className="form">
           <div className="design">
             <img
+            type="file"
               id="mypic"
               src="https://nftb.mypinata.cloud/ipfs/QmatG2osoY93XFx51dLRDja4TuBi1bCxD4ABikGdJ9TQ7V"
             ></img>
@@ -142,7 +142,7 @@ export const Profile = () => {
             </label>
          
             <input
-              className=""
+              className="input-profile"
               type="file"
               name="upload"
               onChange={(e) => {

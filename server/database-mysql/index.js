@@ -7,6 +7,7 @@ var connection = mysql.createConnection({
   password: "Nrmartun",
   database: "NFT"
 
+  
  
 });
 
