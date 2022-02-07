@@ -8,6 +8,8 @@ import { Marketplace } from "./components/Pages/Marketplace.jsx";
 import { Profile } from "./components/Pages/Profile.jsx";
 import React from "react";
 import { Signup } from "./components/Pages/Signup.jsx";
+import { Points } from "./components/Pages/Points.jsx";
+import { Buy } from "./components/Pages/Buy.jsx";
 function App() {
   return (
       <Router>
@@ -20,6 +22,8 @@ function App() {
           <Route path="/marketplace" component={Marketplace} />
           <Route path="/profile" component={Profile} />
           <Route path="/signup" component={Signup} />
+          <Route path="/points" component={Points} />
+          <Route path="/buy" component={Buy} />
         </div>
       </Router>
     

@@ -45,7 +45,6 @@ export const Profile = () => {
     axios
       .get("http://127.0.0.1:3000/api/items/fetch")
       .then((res) => {
-        // console.log(res);
         setPosts(res.data);
       })
       .catch((err) => {
@@ -107,55 +106,53 @@ export const Profile = () => {
         <div className="insidef">
           <div className="title">Welcome</div>
           <div className="subtitle">Create your nft</div>
-          <div className="input-container ic1">
-            <div className="kk">
+          
+            
+              <label className="label-profile" >Title :</label>
               <input
+              className="input-profile"
+              placeholder="title"
                 type="text"
                 value={title}
                 onChange={(e) => {
                   settitle(e.target.value);
                 }}
               />
+              <label className="label-profile" >Price for bid :</label>
               <input
-                type="text"
+              className="input-profile"
+              placeholder="price"
+                type="number"
                 value={price_bid}
                 onChange={(e) => {
                   setprice_bid(e.target.value);
                 }}
               />
-            </div>
-            <div className="cut"></div>
-            <label for="firstname" className="placeholder">
-              Nft Name
-            </label>
-          </div>
-          <div className="input-container ic2">
+            
+            
+          <label className="label-profile">Description</label>
+          
             <input
+            className="input-profile"
+            placeholder="description"
               type="text"
               value={description}
               onChange={(e) => {
                 setdescription(e.target.value);
               }}
             />
-            <div className="cut"></div>
-            <label for="lastname" className="placeholder">
-              Nft description
-            </label>
-          </div>
-          <div className="input-container ic2">
+           
+          
+            <label className="label-profile">NFT :</label>
             <input
-              className=""
+              className="input-profile"
               type="file"
               name="upload"
               onChange={(e) => {
                 setImage(e.target.files[0]);
               }}
             />
-            <div className="cut cut-short"></div>
-            <label for="email" className="placeholder">
-              Nft Image
-            </label>
-          </div>
+           
           <button className="upload" onClick={uploadimage}>
             Upload
           </button>
@@ -190,9 +187,9 @@ export const Profile = () => {
         </div>
       </div>
       <div className="bio">
-        <h1>Bio</h1>
-        <input type="text" name="bi"></input>
-        <div></div>
+        <h1 className="bio-title" >Bio</h1> 
+        
+        <textarea name="bi" className="bio-input" cols="30" rows="10"></textarea>
         <button className="editbio">Edit</button>
       </div>
     </div>
