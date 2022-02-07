@@ -16,8 +16,7 @@ export const Login = () => {
     var params = {emailOrUsername:emailOrUsername,passwordLogin:passwordLogin}
     axios.post(`http://127.0.0.1:3000/api/items/login`,params)
     .then(result=>{
-      
-      
+
       history.push("/profile")
     }).catch(err=>{
       Swal.fire({

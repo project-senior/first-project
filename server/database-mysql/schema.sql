@@ -28,7 +28,7 @@ CREATE TABLE picture (
 CREATE EVENT deleteed_after_time
 ON SCHEDULE EVERY 1 MINUTE
 DO
-DELETE FROM picture WHERE data_end <= DATE_SUB(NOW(), INTERVAL 5 MINUTE) 
+DELETE FROM picture WHERE data_end <= DATE_SUB(NOW(), INTERVAL 59 MINUTE) 
 /*  Execute this file from the command line by typing:
  *    mysql -u root -p < server/database-mysql/schema.sql
  *  to create the database and the tables.*/
