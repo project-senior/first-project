@@ -894,10 +894,10 @@ margin-top: 80px;
   display: inline-block;
   font-size: 16px;
   margin-top: 0px;
-  margin-bottom: -300px;
-  position:absolute;
+  /* margin-bottom: -300px; */
+  /* position:absolute;
   top: 45%;
-  left: 40%;
+  left: 40%; */
 }
 .status{
   width: 300px;
@@ -990,7 +990,7 @@ border: 1px rgba(184, 149, 11, 0.808);
   margin-top: -100px;
 }
 .tagmarket{
-  margin-top: -350px;
+  margin-top: -110px;
   /* margin-bottom: 300px; */
 }
 /* .nesmar{
@@ -1017,7 +1017,7 @@ border: 1px rgba(184, 149, 11, 0.808);
   margin-top: -75px;
   width: 400px;
   height: 400px;
-  padding-left: 80%;
+  /* padding-left: 80%; */
   padding: 0%;
   background: rgba(5, 5, 5, 0.185);
   box-shadow: 0 8px 32px 0 rgba(14, 2, 37, 0.705);
@@ -1026,17 +1026,18 @@ border: 1px rgba(184, 149, 11, 0.808);
   border-radius: 10px;
   border: 1px solid rgba(15, 4, 44, 0.18);
   /* display: inline-block; */
-  vertical-align: middle;
+  /* vertical-align: middle; */
   /* float: center; */
   /* text-align: center; */
-  ;
+ 
+  
 ;
 }
 .price{
   font-size: small;
 }
 .ll{
-  background-color: #bd50a55d;
+  background-color: #8916ac5d;
   border: #08d;
   width: 180px;
   height: 26px;
@@ -1049,13 +1050,17 @@ border: 1px rgba(184, 149, 11, 0.808);
   border: #08d;
   width: 180px;
   height: 26px;
+
   
   /* padding: -30px; */
-  margin-top: -200px;
+  /* margin-top: -200px; */
   /* margin-bottom: 50px; */
   
    
   
+}
+.inpp{
+  margin-bottom: -40px;
 }
 
 .title {
@@ -1064,6 +1069,13 @@ border: 1px rgba(184, 149, 11, 0.808);
   font-size: 36px;
   font-weight: 600;
   margin-top: 30px;
+}
+#sear{
+  background-color: rgba(226, 216, 216, 0.13);
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+
 }
 
 .subtitle {
@@ -1126,15 +1138,15 @@ border: 1px rgba(184, 149, 11, 0.808);
 .input:not(:placeholder-shown) ~ .cut {
   transform: translateY(8px);
 }
-.input-profile{
-  display: flex;
+/* .input-profile{
+  /* display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
     border: none;
     border-bottom: 2px solid #d1d1d4;
-    background: none;
-}
+    background: none; */
+/* */ 
 .input-profile::placeholder{
   color: rgb(230, 216, 24);
 font-size: medium;
