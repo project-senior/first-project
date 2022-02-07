@@ -79,6 +79,7 @@ export const Profile = () => {
         <div className="form">
           <div className="design">
             <img
+            type="file"
               id="mypic"
               src="https://nftb.mypinata.cloud/ipfs/QmatG2osoY93XFx51dLRDja4TuBi1bCxD4ABikGdJ9TQ7V"
             ></img>
