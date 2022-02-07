@@ -108,43 +108,39 @@ export const Profile = () => {
           <div className="title">Welcome</div>
           <div className="subtitle">Create your nft</div>
           
-            
-              <label className="label-profile" >Title :</label>
-              <input
-              className="input-profile"
-              placeholder="title"
-                type="text"
+              <input className="ll"
+                type="text" placeholder="Nft Name"
                 value={title}
                 onChange={(e) => {
                   settitle(e.target.value);
                 }}
               />
-              <label className="label-profile" >Price for bid :</label>
-              <input
-              className="input-profile"
-              placeholder="price"
-                type="number"
+              <div className="price" ></div>
+              <input className="ll"
+                type="number" placeholder="Price"
                 value={price_bid}
                 onChange={(e) => {
                   setprice_bid(e.target.value);
                 }}
               />
             
-            
-          <label className="label-profile">Description</label>
+            <div className="cut"></div>
+            <label for="firstname" className="placeholder" >
+              
+            </label>
           
-            <input
-            className="input-profile"
-            placeholder="description"
-              type="text"
+            <input className="mm"
+              type="text" placeholder="Nft description"
               value={description}
               onChange={(e) => {
                 setdescription(e.target.value);
               }}
             />
-           
-          
-            <label className="label-profile">NFT :</label>
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">
+              
+            </label>
+         
             <input
               className="input-profile"
               type="file"
@@ -153,7 +149,11 @@ export const Profile = () => {
                 setImage(e.target.files[0]);
               }}
             />
-           
+            <div className="cut cut-short"></div>
+            <label for="email" className="placeholder">
+              
+            </label>
+          
           <button className="upload" onClick={uploadimage}>
             Upload
           </button>
@@ -176,7 +176,6 @@ export const Profile = () => {
               </div>
 
               <div class="contentBox">
-                <h3>Mouse Corsair M65</h3>
                 <p>{elem.description}</p>
                 <h2 class="price">{elem.price_bid} €</h2>
                 <button class="buy" onClick={() => deletePost(elem.title)}>
@@ -188,9 +187,10 @@ export const Profile = () => {
         </div>
       </div>
       <div className="bio">
-        <h1 className="bio-title" >Bio</h1> 
+        <h1>Bio</h1>
+        <div className="status">the user dosn't write anything.</div>
+        <input className="bioinp" type="text" name="bi"></input>
         
-        <textarea name="bi" className="bio-input" cols="30" rows="10"></textarea>
         <button className="editbio">Edit</button>
       </div>
     </div>
