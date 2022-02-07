@@ -904,6 +904,41 @@ display: inline-block;
 vertical-align: middle;
 border: 1px rgba(184, 149, 11, 0.808);
 }
+.marsell{
+  background-color: #000000a9;
+  /* position:absolute; */
+  display: inblock;
+  width: 1400px;
+  height: 900px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: -10px;
+  grid-row-gap: -20px;
+  padding:50px;
+  margin-left: 3px;
+  border-radius: 5px;
+  background: rgba(3, 0, 5, 0.473);
+  box-shadow: 0 8px 32px 0 rgba(14, 2, 37, 0.705);
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px );
+  border-radius: 10px;
+  border: 1px solid rgba(15, 4, 44, 0.18);
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px rgba(184, 149, 11, 0.808);
+}
+#bodymar{
+  margin-top: -100px;
+}
+.tagmarket{
+  margin-top: -350px;
+  /* margin-bottom: 300px; */
+}
+/* .nesmar{
+  
+} */
 
 
 .upload{

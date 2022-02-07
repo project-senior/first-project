@@ -11,10 +11,19 @@ export const Marketplace = () => {
 
 
   return (
-    <div>
+    <div id='bodymar'>
+    <div className="sign">
+    <div className='tagmarket'>
+        <span className="fast-flicker">Market</span> -
+        <span className="flicker">Place</span>
+        </div>
+      </div>
      
       <div >
+      <div className='marsell'>
+      <div nesmar>
       {nftdata.map((elem, i) => (
+        
        <Card sx={{ maxWidth: 345 }}>
        <CardActionArea>
          <CardMedia
@@ -33,8 +42,11 @@ export const Marketplace = () => {
            </Typography>
          </CardContent>
        </CardActionArea>
+       
      </Card>
       ))}
+      </div>
+      </div>
     </div>
     </div>
    
