@@ -21,8 +21,14 @@ CREATE TABLE picture (
   price_bid DECIMAL(10,2) NOT NULL,
   -- Domain_name varchar(30),
   -- soponsoring boolean,
+  data_end DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (ID)
 );
+/*   /// SECHEDULE EVENT TO DELETE POST FROM TABLE PICTURE AFTER PASSING AMOUNT OF TIME */
+CREATE EVENT deleteed_after_time
+ON SCHEDULE EVERY 1 MINUTE
+DO
+DELETE FROM picture WHERE data_end <= DATE_SUB(NOW(), INTERVAL 5 MINUTE) 
 /*  Execute this file from the command line by typing:
  *    mysql -u root -p < server/database-mysql/schema.sql
  *  to create the database and the tables.*/
