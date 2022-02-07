@@ -1,5 +1,6 @@
 import React from "react";
 import emailjs from "emailjs-com"
+import Swal from 'sweetalert2'
 
 
 
@@ -10,6 +11,24 @@ export const Contact = () => {
     emailjs.sendForm('service_2b9z6jn', 'template_w5augwu', e.target, 'user_nq77ZAbqLCFN6SjvoSVCt')
       .then((result) => {
           console.log(result.text);
+          Swal.fire({
+            title: '<strong>THank <u>for contacting as</u></strong>',
+            icon: 'success',
+            html:
+              'You can use <b>bold text</b>, ' +
+              '<a href="//sweetalert2.github.io">links</a> ' +
+              'and other HTML tags',
+            showCloseButton: true,
+            showCancelButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+              '<i class="fa fa-thumbs-up"></i> Great!',
+            confirmButtonAriaLabel: 'Thumbs up, great!',
+            cancelButtonText:
+              '<i class="fa fa-thumbs-down"></i>',
+            cancelButtonAriaLabel: 'Thumbs down'
+          })
+          
       }, (error) => {
           console.log(error.text);
       });
