@@ -16,7 +16,7 @@ export const Login = () => {
     axios.post(`http://127.0.0.1:3000/api/items/login`,params)
     .then(result=>{
       
-      history.push("/marketplace")
+      history.push("/profile")
     }).catch(err=>{
       console.log(err)
     })
