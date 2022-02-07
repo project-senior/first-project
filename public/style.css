@@ -279,8 +279,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   width: 320px;
   padding: 30px;
   padding-top: 110px;
-  margin-left: 73%;
-  
+  margin-left: 42%;
   
 }
 
@@ -305,7 +304,10 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   width: 75%;
   transition: 0.2s;
 }
-
+.signs input.signnr::placeholder{
+color: rgb(230, 216, 24);
+font-size: medium;
+}
 .login__input:active,
 .login__input:focus,
 .login__input:hover {
@@ -391,18 +393,52 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   border: none;
   border-bottom: 2px solid #d1d1d4;
   background: none;
-  padding: 10px;
-  padding-left: 24px;
+  padding-top: 7px;
+  padding-left: 15px;
+  margin-bottom: 60px;
   font-weight: 700;
-  width: 20%;
+  display: block;
+  width: 25%;
   transition: 0.2s;
+  margin-left: 38%;
+}
+.login__field input.login__input::placeholder{
+  color: hsl(53deg 95% 61%);
+  font-size: medium;
+}
+.form__button{
+  background: #fff;
+  font-size: 14px;
+  margin-left: 31.5%;
+  margin-top: -15px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: 1px solid #d4d3e8;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 35%;
+  color: #4c489d;
+  box-shadow: 0px 2px 2px #5c5696;
+  cursor: pointer;
+  transition: 0.2s;
+  justify-content: center;
 }
 .signs{
-  background-color: #111;
-  text-align:center;
-  width: 400px;
-  min-height: 400px;
-  font-size: small;
+  width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 700px;
+    justify-content: center;
+    text-align: center;
+    margin-top: -150px;
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 24.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .title {
@@ -920,20 +956,13 @@ border: 1px rgba(184, 149, 11, 0.808);
 .insidef{
   
   margin-top: -75px;
-  width: 400px;
-  height: 400px;
-  padding-left: 80%;
-  padding: 0%;
-  background: rgba(5, 5, 5, 0.185);
-  box-shadow: 0 8px 32px 0 rgba(14, 2, 37, 0.705);
-  backdrop-filter: blur( 4.5px );
-  -webkit-backdrop-filter: blur( 4.5px );
-  border-radius: 10px;
-  border: 1px solid rgba(15, 4, 44, 0.18);
-  /* display: inline-block; */
-  vertical-align: middle;
-  /* float: center; */
-  text-align: center;
+    width: 400px;
+    height: 400px;
+    padding-right: 100px;
+    padding-left: 100px;
+    background: rgba(5, 5, 5, 0.185);
+    box-shadow: 0 8px 32px 0 rgb(14 2 37 / 71%);
+    backdrop-filter: blur( 13.5px );
 }
 .title {
   color: #eee;
@@ -956,7 +985,12 @@ border: 1px rgba(184, 149, 11, 0.808);
   position: relative;
   width: 100%;
 }
-
+.label-profile{
+  font-size: 22px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
 .ic1 {
   margin-top: 40px;
 }
@@ -998,7 +1032,36 @@ border: 1px rgba(184, 149, 11, 0.808);
 .input:not(:placeholder-shown) ~ .cut {
   transform: translateY(8px);
 }
-
+.input-profile{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border: none;
+    border-bottom: 2px solid #d1d1d4;
+    background: none;
+}
+.input-profile::placeholder{
+  color: rgb(230, 216, 24);
+font-size: medium;
+}
+.bio-title{
+  font-size: larger;
+}
+.bio-label{
+  font-size: medium;
+  position: absolute;
+    left: 40%;
+}
+.bio-input{
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 20%;
+  border-radius: 15px;
+  background-color: #5a2b57;
+}
 .placeholder {
   color: #65657b;
   font-family: sans-serif;
@@ -1224,7 +1287,7 @@ background-color: rgba(8, 0, 0, 0.644);
 }
 .logg{
   font-size:xx-large;
-  color: #c6c7b4bb;
+  color: #ffe935;
 }
 .ins{
   font-size: medium;
@@ -1244,41 +1307,128 @@ color: rgba(255, 255, 255, 0.801);
   color: rgba(245, 222, 179, 0.329);
 }
 
-.container-gift-card{
-  display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 55px;
-    justify-items: center;
-    align-items: center;
-    margin-top: -7.3%;
-    backdrop-filter: blur( 14.5px );
+
+
+/* //////////   nft data card ////////// */
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Istok Web", sans-serif;
 }
-.gift-card-title{
-  font-size: xxx-large;
-  position: absolute;
-  left: 43%;
-  top: -10%;
-  font-family: emoji;
-}
-.gift-card{
-  box-sizing: border-box;
-  width: 75%;
+
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #212121;
+} */
+
+.card {
+  position: relative;
+  width: 220px;
+  height: 380px;
+  background: #191919af;
   border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-  border: 1px solid rgb(60 201 255);
+  overflow: hidden;
+  margin-top: 30px;
 }
-.gift-card-img  {
-  width: 80%;
-  height: 70%;
-  box-shadow: 0 8px 32px 0 rgb(255 0 0 / 0%);
-  border-radius: 40px;
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffce00;
+  transform: skewY(345deg);
+  transition: 0.5s;
 }
-.gift-card img.gift-card-img:hover {
-  box-shadow: 0 8px 32px 0 rgba(255, 0, 0, 0.719);
+
+.card:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
 }
-.money{
-  font-size: xx-large;
-  font-family: emoji;
+
+.card::after {
+  content: "CORSAIR";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card .imgBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card .contentBox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card .contentBox h3 {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card .contentBox .price {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card .contentBox .buy {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffce00;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.card:hover .contentBox .buy {
+  top: 0;
+  opacity: 1;
+}
+
+.mouse {
+  height: 200px;
+  width: auto;
 }
