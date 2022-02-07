@@ -188,7 +188,7 @@ export const Profile = () => {
       </div>
       <div className="bio">
         <h1 className="bio-title" >Bio</h1> 
-        <label className="bio-label" >Your bio :</label>
+        
         <textarea name="bi" className="bio-input" cols="30" rows="10"></textarea>
         <button className="editbio">Edit</button>
       </div>
