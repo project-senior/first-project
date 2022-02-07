@@ -52,7 +52,7 @@ export const Marketplace = () => {
       <div>
         <div className="marsell">
           <div>
-            <input
+                   <input id="sear"
               icon="search"
               placeholder="Search..."
               onChange={(e) => searchItems(e.target.value)}
@@ -77,7 +77,9 @@ export const Marketplace = () => {
                           <h3>{elem.title}</h3>
                           <p>{elem.description}</p>
                           <h2 class="price">{elem.price_bid} €</h2>
+                          
                         </div>
+                        
                       </div>
                     );
                   })
@@ -96,7 +98,8 @@ export const Marketplace = () => {
                       <div class="contentBox">
                         <h3>{elem.title}</h3>
                         <p>{elem.description}</p>
-                        <h2 class="price">{elem.price_bid} €</h2>
+                        <h2 class="price">{elem.price_bid} Pts</h2>
+                        <button class="buy">Buy</button>
                       </div>
                     </div>
                   ))}

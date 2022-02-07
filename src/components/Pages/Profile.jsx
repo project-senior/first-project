@@ -120,7 +120,6 @@ export const Profile = () => {
         <div className="insidef">
           <div className="title">Welcome</div>
           <div className="subtitle">Create your nft</div>
-          
               <input className="ll"
                 type="text" placeholder="Nft Name"
                 value={title}
@@ -128,7 +127,7 @@ export const Profile = () => {
                   settitle(e.target.value);
                 }}
               />
-              <div className="price" ></div>
+              <div>
               <input className="ll"
                 type="number" placeholder="Price"
                 value={price_bid}
@@ -136,7 +135,7 @@ export const Profile = () => {
                   setprice_bid(e.target.value);
                 }}
               />
-            
+              </div>
             <div className="cut"></div>
             <label for="firstname" className="placeholder" >
               
@@ -153,8 +152,8 @@ export const Profile = () => {
             <label for="lastname" className="placeholder">
               
             </label>
-         
-            <input
+            
+            <input className="inpp"
               className="input-profile"
               type="file"
               name="upload"
