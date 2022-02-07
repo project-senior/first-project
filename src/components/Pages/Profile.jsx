@@ -1,6 +1,9 @@
 import { Image } from "cloudinary-react";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Swal from 'sweetalert2'
+
+
 export const Profile = () => {
   //// testing cloudinary
   const [image, setImage] = useState(null);
@@ -21,6 +24,11 @@ export const Profile = () => {
       .post("https://api.cloudinary.com/v1_1/dhgzyelo6/image/upload", form)
       .then((response) => {
         // console.log(response);
+        Swal.fire(
+          'your nft created successfully!',
+          'You clicked the button!',
+          'success'
+        )
         //post
         axios.post("http://127.0.0.1:3000/api/items/sellProduct", {
           upload: response.data.secure_url,
@@ -53,10 +61,15 @@ export const Profile = () => {
   });
 
   function deletePost(title) {
+    Swal.fire(
+      'your nft deleted successfully!',
+      'You clicked the button!',
+      'success'
+    )
     axios
       .delete(`http://127.0.0.1:3000/api/items/deleteNft/${title}`)
       .then(() => {
-        console.log("NFT deleted!");
+        
       })
       .catch((err) => {
         console.log(err);

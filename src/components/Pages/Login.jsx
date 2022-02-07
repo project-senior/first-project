@@ -2,6 +2,7 @@ import axios from "axios";
 import React , {useState}  from "react";
 import { Link } from "react-router-dom";
 import { useHistory} from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export const Login = () => {
   const [emailOrUsername,setemailOrUsername] = useState("")
@@ -15,9 +16,15 @@ export const Login = () => {
     var params = {emailOrUsername:emailOrUsername,passwordLogin:passwordLogin}
     axios.post(`http://127.0.0.1:3000/api/items/login`,params)
     .then(result=>{
-      
+
       history.push("/profile")
     }).catch(err=>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Wrong password !',
+        
+      })
       console.log(err)
     })
   }
