@@ -1,7 +1,6 @@
 import NavBar from "./components/NavBar.jsx";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Home } from "./components/Pages/Home.jsx";
-import { About } from "./components/Pages/About.jsx";
 import { Login } from "./components/Pages/Login.jsx";
 import { Contact } from "./components/Pages/Contact.jsx";
 import { Marketplace } from "./components/Pages/Marketplace.jsx";
@@ -16,7 +15,6 @@ function App() {
         <NavBar />
         <div className="pages">
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
           <Route path="/login" component={Login} />
           <Route path="/contact" component={Contact} />
           <Route path="/marketplace" component={Marketplace} />

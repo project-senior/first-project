@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import { Points } from "./Pages/Points.jsx";
+
 function NavBar() {
   const [click, setClick] = useState(false);
+  const [count,setcount] = useState(0)
   const money =()=>{
     axios.get(`http://127.0.0.1:3000/api/items/user`)
   }
   const handleClick = () => setClick(!click);
+  const toggle =()=> setcount(1)
   return (
     
       <nav className="navbar">
@@ -32,34 +34,12 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/about"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
                 to="/marketplace"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
                Market Place
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/login"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                LogIn
               </NavLink>
             </li>
             <li className="nav-item">
@@ -73,17 +53,28 @@ function NavBar() {
                 Contact Us
               </NavLink>
             </li>
+           {count !== 0 ? 
             <li className="nav-item">
               <NavLink
                 exact
                 to="/profile"
                 activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+                onClick={toggle}
               >
                 Profile
               </NavLink>
-            </li>
+            </li>:<li className="nav-item">
+              <NavLink
+                exact
+                to="/login"
+                activeClassName="active"
+                className="nav-links"
+                onClick={toggle}
+              >
+                LogIn
+              </NavLink>
+            </li>}
             <div id="points">
             <NavLink
                 exact
