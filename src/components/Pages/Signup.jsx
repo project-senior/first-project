@@ -25,7 +25,7 @@ const signup =(e)=>{
 Swal.fire({
   title: 'Welcome ',
   html: 'WELCOME in  OUR WEBSITES <b></b> :))',
-  timer: 3000,
+  timer: 2000,
   timerProgressBar: true,
   didOpen: () => {
     Swal.showLoading()
@@ -50,13 +50,16 @@ Swal.fire({
             if(result.data === "1 user inserted"){
               
               history.push("/marketplace")
-                }else{
-
-
                 }
             })
         }).catch(err=>{
-            console.log(err)
+          
+            console.log(err,Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'password must constain symbol!',
+            footer: '<a href=""check inputs</a>'
+          }))
         })
     }
     return (
@@ -69,7 +72,7 @@ Swal.fire({
 					<label >Username :</label>
       <input className="signnr" onChange={(e) => { setusername(e.target.value) }} type="text" name="username"  placeholder="Your username" />
       <label >Email :</label>
-      <input className="signnr" onChange={(e) => { setemail(e.target.value) }} type="text" name="email"  placeholder="Your email" />
+      <input className="signnr" onChange={(e) => { setemail(e.target.value) }} type="email" name="email"  placeholder="Your email" />
       <label >Password :</label>
       <input className="signnr" onChange={(e) => { setpassword(e.target.value) }} type="password" name="password" placeholder="Password"/>
       <label >Age :</label>

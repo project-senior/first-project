@@ -15,9 +15,9 @@ export const Contact = () => {
             title: '<strong>THank <u>for contacting as</u></strong>',
             icon: 'success',
             html:
-              'You can use <b>bold text</b>, ' +
-              '<a href="//sweetalert2.github.io">links</a> ' +
-              'and other HTML tags',
+              
+              
+              'THANK YOU :))',
             showCloseButton: true,
             showCancelButton: true,
             focusConfirm: false,

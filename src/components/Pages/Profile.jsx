@@ -1,6 +1,9 @@
 import { Image } from "cloudinary-react";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Swal from 'sweetalert2'
+
+
 export const Profile = () => {
   //// testing cloudinary
   const [image, setImage] = useState(null);
@@ -21,6 +24,11 @@ export const Profile = () => {
       .post("https://api.cloudinary.com/v1_1/dhgzyelo6/image/upload", form)
       .then((response) => {
         // console.log(response);
+        Swal.fire(
+          'your nft created successfully!',
+          'You clicked the button!',
+          'success'
+        )
         //post
         axios.post("http://127.0.0.1:3000/api/items/sellProduct", {
           upload: response.data.secure_url,
@@ -45,7 +53,6 @@ export const Profile = () => {
     axios
       .get("http://127.0.0.1:3000/api/items/fetch")
       .then((res) => {
-        // console.log(res);
         setPosts(res.data);
       })
       .catch((err) => {
@@ -54,10 +61,15 @@ export const Profile = () => {
   });
 
   function deletePost(title) {
+    Swal.fire(
+      'your nft deleted successfully!',
+      'You clicked the button!',
+      'success'
+    )
     axios
       .delete(`http://127.0.0.1:3000/api/items/deleteNft/${title}`)
       .then(() => {
-        console.log("NFT deleted!");
+        
       })
       .catch((err) => {
         console.log(err);
@@ -80,6 +92,7 @@ export const Profile = () => {
         <div className="form">
           <div className="design">
             <img
+            type="file"
               id="mypic"
               src="https://nftb.mypinata.cloud/ipfs/QmatG2osoY93XFx51dLRDja4TuBi1bCxD4ABikGdJ9TQ7V"
             ></img>
@@ -107,31 +120,29 @@ export const Profile = () => {
         <div className="insidef">
           <div className="title">Welcome</div>
           <div className="subtitle">Create your nft</div>
-          <div className="input-container ic1">
-            <div className="kk">
-              <input
-                type="text"
+              <input className="ll"
+                type="text" placeholder="Nft Name"
                 value={title}
                 onChange={(e) => {
                   settitle(e.target.value);
                 }}
               />
-              <input
-                type="text"
+              <div>
+              <input className="ll"
+                type="number" placeholder="Price"
                 value={price_bid}
                 onChange={(e) => {
                   setprice_bid(e.target.value);
                 }}
               />
-            </div>
+              </div>
             <div className="cut"></div>
-            <label for="firstname" className="placeholder">
-              Nft Name
+            <label for="firstname" className="placeholder" >
+              
             </label>
-          </div>
-          <div className="input-container ic2">
-            <input
-              type="text"
+          
+            <input className="mm"
+              type="text" placeholder="Nft description"
               value={description}
               onChange={(e) => {
                 setdescription(e.target.value);
@@ -139,12 +150,11 @@ export const Profile = () => {
             />
             <div className="cut"></div>
             <label for="lastname" className="placeholder">
-              Nft description
+              
             </label>
-          </div>
-          <div className="input-container ic2">
-            <input
-              className=""
+            
+            <input className="inpp"
+              className="input-profile"
               type="file"
               name="upload"
               onChange={(e) => {
@@ -153,9 +163,9 @@ export const Profile = () => {
             />
             <div className="cut cut-short"></div>
             <label for="email" className="placeholder">
-              Nft Image
+              
             </label>
-          </div>
+          
           <button className="upload" onClick={uploadimage}>
             Upload
           </button>
@@ -178,7 +188,6 @@ export const Profile = () => {
               </div>
 
               <div class="contentBox">
-                <h3>Mouse Corsair M65</h3>
                 <p>{elem.description}</p>
                 <h2 class="price">{elem.price_bid} €</h2>
                 <button class="buy" onClick={() => deletePost(elem.title)}>
@@ -191,8 +200,9 @@ export const Profile = () => {
       </div>
       <div className="bio">
         <h1>Bio</h1>
-        <input type="text" name="bi"></input>
-        <div></div>
+        <div className="status">the user dosn't write anything.</div>
+        <input className="bioinp" type="text" name="bi"></input>
+        
         <button className="editbio">Edit</button>
       </div>
     </div>
