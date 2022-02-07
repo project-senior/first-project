@@ -107,31 +107,30 @@ export const Profile = () => {
         <div className="insidef">
           <div className="title">Welcome</div>
           <div className="subtitle">Create your nft</div>
-          <div className="input-container ic1">
-            <div className="kk">
-              <input
-                type="text"
+          
+              <input className="ll"
+                type="text" placeholder="Nft Name"
                 value={title}
                 onChange={(e) => {
                   settitle(e.target.value);
                 }}
               />
-              <input
-                type="text"
+              <div className="price" ></div>
+              <input className="ll"
+                type="number" placeholder="Price"
                 value={price_bid}
                 onChange={(e) => {
                   setprice_bid(e.target.value);
                 }}
               />
-            </div>
+            
             <div className="cut"></div>
-            <label for="firstname" className="placeholder">
-              Nft Name
+            <label for="firstname" className="placeholder" >
+              
             </label>
-          </div>
-          <div className="input-container ic2">
-            <input
-              type="text"
+          
+            <input className="mm"
+              type="text" placeholder="Nft description"
               value={description}
               onChange={(e) => {
                 setdescription(e.target.value);
@@ -139,10 +138,9 @@ export const Profile = () => {
             />
             <div className="cut"></div>
             <label for="lastname" className="placeholder">
-              Nft description
+              
             </label>
-          </div>
-          <div className="input-container ic2">
+         
             <input
               className=""
               type="file"
@@ -153,9 +151,9 @@ export const Profile = () => {
             />
             <div className="cut cut-short"></div>
             <label for="email" className="placeholder">
-              Nft Image
+              
             </label>
-          </div>
+          
           <button className="upload" onClick={uploadimage}>
             Upload
           </button>
@@ -178,7 +176,6 @@ export const Profile = () => {
               </div>
 
               <div class="contentBox">
-                <h3>Mouse Corsair M65</h3>
                 <p>{elem.description}</p>
                 <h2 class="price">{elem.price_bid} €</h2>
                 <button class="buy" onClick={() => deletePost(elem.title)}>
@@ -191,8 +188,9 @@ export const Profile = () => {
       </div>
       <div className="bio">
         <h1>Bio</h1>
-        <input type="text" name="bi"></input>
-        <div></div>
+        <div className="status">the user dosn't write anything.</div>
+        <input className="bioinp" type="text" name="bi"></input>
+        
         <button className="editbio">Edit</button>
       </div>
     </div>
