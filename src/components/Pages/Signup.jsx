@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-// import { Redirect } from "react-router-dom";
+import Swal from 'sweetalert2'
 import { useHistory} from "react-router-dom";
 export const Signup = () => {
     const [username,setusername] = useState("")
@@ -20,13 +20,38 @@ const signup =(e)=>{
         form.append("upload_preset","bpnhlkro")
         axios.post("https://api.cloudinary.com/v1_1/dhgzyelo6/image/upload",form)
         .then(response=>{
+          ///// popup after
+          let timerInterval
+Swal.fire({
+  title: 'Welcome ',
+  html: 'WELCOME in  OUR WEBSITES <b></b> :))',
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('WElCOME TO MARKET PLACE')
+  }
+})
+
           console.log(response,"ress")
+          
           axios.post("http://127.0.0.1:3000/api/items/signup",{username:username,email:email,password:password,age:age,phonenumber:phonenumber,profile_picture:response.data.secure_url})
           .then(result=>{
             if(result.data === "1 user inserted"){
-              console.log("hhhhh",result.data)
+              
               history.push("/marketplace")
                 }else{
+
 
                 }
             })
